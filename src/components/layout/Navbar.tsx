@@ -167,22 +167,22 @@ const Navbar = () => {
 
             </header>
 
-            <div className={`${openNav ? 'block' : 'hidden'} bg-transparent backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-end items-end z-10 md:hidden h-screen w-full absolute bottom-0`}>
+            <div className={`${openNav ? 'block' : 'hidden'} backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-end items-end z-10 md:hidden h-screen w-full absolute bottom-0`}>
 
                 <div className='w-full flex justify-center items-center mb-10'>
-                    <NavLink to="/" className="bg-white rounded-full px-4 py-3" onClick={toggleNav}>
+                    <NavLink to="/" className="bg-gray-100 rounded-full px-4 py-3" onClick={toggleNav}>
                         <img className='h-12 lg:h-full' src="/logo-delhiMetro.svg" alt="" />
                     </NavLink>
                 </div>
 
-                <div className="bg-gray-200 flex flex-col gap-4 p-6 rounded-lg w-full font-medium">
+                <div className="bg-gray-100 flex flex-col gap-4 p-6 rounded-lg w-full font-medium">
                     {navList()}
                 </div>
 
 
                 <button
                     onClick={toggleNav}
-                    className="block md:hidden border border-white bg-white p-2 rounded-full text-gray-600"
+                    className="block md:hidden border border-white bg-whit bg-gray-100 p-2 rounded-full text-gray-600"
                 >
                     <svg
                         className={`w-6 h-6 ${openNav ? 'block' : 'hidden'}`}
