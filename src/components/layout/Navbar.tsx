@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import AgraMetroLogo from "/metroAgraLogo.webp";
 // import Slide from '@mui/material/Slide';
 
 
@@ -81,13 +82,13 @@ const Navbar = () => {
 
     return (
         <>
-            <header className="border-black borde shadow-md">
-                <div className="mx-auto py-4 px-4 md:flex md:items-center md:justify-between lg:mx-8">
+            <header className="shadow-md">
+                <div className="mx-auto py-2 px-4 md:flex md:items-center md:justify-between lg:mx-10">
+                   
                     <div className="flex items-center justify-between">
                         <NavLink to="/" >
-                            <img className='h-12 lg:h-14' src="/logo-delhiMetro.svg" alt="" />
+                            <img className='h-12 lg:h-16' src={AgraMetroLogo} alt="" />
                         </NavLink>
-
 
                         <button
                             onClick={toggleNav}
@@ -125,18 +126,8 @@ const Navbar = () => {
 
                         </button>
 
-
-
                     </div>
 
-
-
-                    {/* <div
-                    className={`${openNav ? 'block' : 'hidden'
-                        } mt-4  bg-white flex flex-col gap-4 p-6 rounded-lg z-10 md:hidden absolute w-ful`}
-                >
-                    {navList()}
-                </div> */}
 
                     <div className='flex'>
 
@@ -156,6 +147,8 @@ const Navbar = () => {
 
                     </div>
 
+                    <div>Search</div>
+
                 </div>
 
                 {/* <div className={`${openNav ? 'block' : 'hidden'} bg-white p-6 z-10 md:hidden w-full sticky bottom-0`}>
@@ -171,7 +164,7 @@ const Navbar = () => {
 
                 <div className='w-full flex justify-center items-center mb-10'>
                     <NavLink to="/" className="bg-gray-100 rounded-full px-4 py-3" onClick={toggleNav}>
-                        <img className='h-12 lg:h-full' src="/logo-delhiMetro.svg" alt="" />
+                        <img className='h-12 lg:h-full' src={AgraMetroLogo} alt="" />
                     </NavLink>
                 </div>
 
