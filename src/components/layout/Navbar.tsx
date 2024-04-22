@@ -147,7 +147,7 @@ const Navbar = () => {
 
                     </div>
 
-                    <div>Search</div>
+                    <div className='lg:flex hidden'>Search</div>
 
                 </div>
 
