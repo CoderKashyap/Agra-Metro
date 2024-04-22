@@ -10,7 +10,6 @@ const Home = () => {
     const [fromStation, setFromStation] = useState("");
 
     const [showFromStation, setShowFromStation] = useState(false);
-    const [stationNameToFilterDropdown, setstationNameToFilterDropdown] = useState("");
     const [stationObjRemake, setStationObjRemake] = useState<Array<{ stationName: string }>>([]);
     const [toStationObjRemake, setToStationObjRemake] = useState<Array<{ stationName: string }>>([]);
 
@@ -26,14 +25,12 @@ const Home = () => {
 
 
     const createStationsObjForDropdown = (stationName: string) => {
-        // setstationNameToFilterDropdown(stationName)
         const filteredStations = stations?.filter(station => station.stationName.toLowerCase().includes(stationName.toLowerCase()));
         setStationObjRemake(filteredStations);
         if (stationName.length > 0) { setShowFromStation(true) } else { setShowFromStation(false); setStationObjRemake([]) }
     }
 
     const createToStationsObjForDropdown = (stationName: string) => {
-        // setstationNameToFilterDropdown(stationName)
         const filteredStations = stations?.filter(station => station.stationName.toLowerCase().includes(stationName.toLowerCase()));
         setToStationObjRemake(filteredStations);
         if (stationName.length > 0) { setShowToStation(true) } else { setShowToStation(false); setToStationObjRemake([]) }
@@ -74,7 +71,7 @@ const Home = () => {
                                                 <div onClick={(e) => { e.stopPropagation(); setFromStation("") }} className="rounded-full text-xs px-2 py-1.5 text-white bg-green-700">Search</div>
                                             </div> : <>
                                                 <div onClick={() => setShowFromStation(!showFromStation)} className="flex justify-center items-center">
-                                                    <input type="text" name="station" id="fromStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" required />
+                                                    <input type="text" name="station" id="fromStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" onChange={(e)=> createStationsObjForDropdown(e.target.value)} required />
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6  absolute right-2 text-gray-600 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fillRule="evenodd" d="M5.293 6.293a1 1 0 011.414 0L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                                     </svg>
@@ -116,7 +113,7 @@ const Home = () => {
                                                 <div onClick={(e) => { e.stopPropagation(); setToStation("") }} className="rounded-full text-xs px-2 py-1.5 text-white bg-green-700">Search</div>
                                             </div> : <>
                                                 <div onClick={() => setShowToStation(!showToStation)} className="flex justify-center items-center">
-                                                    <input type="text" name="toStation" id="toStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" required />
+                                                    <input type="text" name="toStation" id="toStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" onChange={(e)=> createToStationsObjForDropdown(e.target.value)} required />
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6  absolute right-2 text-gray-600 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fillRule="evenodd" d="M5.293 6.293a1 1 0 011.414 0L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                                     </svg>
