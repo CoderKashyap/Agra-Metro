@@ -1,5 +1,5 @@
 import MetaData from "../../components/layout/MetaData";
-import CountUp from 'react-countup';
+import SearchIcon from '@mui/icons-material/Search';
 import "./home.css";
 import { useEffect, useState } from "react";
 
@@ -44,13 +44,14 @@ const Home = () => {
                 title="Welcome to Agra Metro Rail | Agra Metro"
                 description="Agra ghumo, Khao pio aish kro." keywords="Agra Metro" image={undefined} />
 
-            <section onClick={() => {setShowFromStation(false); setShowToStation(false)}} className="w-full">
-                <div className="grid place-items-center">
-                    <div className="lg:mx-10">
+            <section onClick={() => { setShowFromStation(false); setShowToStation(false) }} className="w-full">
+                <div style={{ border: "2px solid blac" }} className="grid place-items-center">
+                    <div style={{ border: "2px solid re" }} className="sm:w-11/12 w-full">
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-6 p-4">
+                        <div style={{ border: "2px solid blac" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-6 p-4">
 
-                            <div className="col-span- row-span-4 shadow-md bg-[#c7edfe] p-4 rounded-lg">
+                            {/* Route search form vala colomn 1 */}
+                            <div style={{ border: "2px solid gree" }} className="row-span-2 shadow-md bg-[#c7edfe] p-4 rounded-lg">
                                 <div className="flex items-center gap-2"> <img height="40px" width="40px" src="/UPMRC.png" alt="Metro Agra Logo" /> <span className="text-lg font-medium text-gray-800">Plan Your Journey</span></div>
                                 <div className="text-sm my-4 text-gray-700">Click here to plan through <span className="text-blue-600">Interactive Map</span></div>
 
@@ -71,7 +72,7 @@ const Home = () => {
                                                 <div onClick={(e) => { e.stopPropagation(); setFromStation("") }} className="rounded-full text-xs px-2 py-1.5 text-white bg-green-700">Search</div>
                                             </div> : <>
                                                 <div onClick={() => setShowFromStation(!showFromStation)} className="flex justify-center items-center">
-                                                    <input type="text" name="station" id="fromStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" onChange={(e)=> createStationsObjForDropdown(e.target.value)} required />
+                                                    <input type="text" name="station" id="fromStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" onChange={(e) => createStationsObjForDropdown(e.target.value)} required />
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6  absolute right-2 text-gray-600 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fillRule="evenodd" d="M5.293 6.293a1 1 0 011.414 0L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                                     </svg>
@@ -113,7 +114,7 @@ const Home = () => {
                                                 <div onClick={(e) => { e.stopPropagation(); setToStation("") }} className="rounded-full text-xs px-2 py-1.5 text-white bg-green-700">Search</div>
                                             </div> : <>
                                                 <div onClick={() => setShowToStation(!showToStation)} className="flex justify-center items-center">
-                                                    <input type="text" name="toStation" id="toStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" onChange={(e)=> createToStationsObjForDropdown(e.target.value)} required />
+                                                    <input type="text" name="toStation" id="toStation" className="shadow-sm border border-cyan-400 text-gray-900 sm:text-sm rounded-md focus:outline-none focus:ring-0 focus:border-red-600 block w-full p-2" placeholder="Search station or click to select" onChange={(e) => createToStationsObjForDropdown(e.target.value)} required />
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6  absolute right-2 text-gray-600 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fillRule="evenodd" d="M5.293 6.293a1 1 0 011.414 0L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                                     </svg>
@@ -138,7 +139,7 @@ const Home = () => {
                                             </div>}
                                     </div>
 
-                                    <div className="mt-8 flex justify-between items-center">
+                                    <div className="mt-10 flex justify-between items-center">
                                         <button className="font-medium text-sm underline" type="reset">Reset</button>
                                         <button className="bg-[#c0282c] rounded-md text-white font-medium text-sm p-2 px-6" type="submit">Show Route & Fare</button>
                                     </div>
@@ -147,17 +148,22 @@ const Home = () => {
 
                             </div>
 
-                            <div className="col-span- shadow-md border border-gray-200 rounded-lg md:p-2 p-1">
 
-                                <div className="flex items-center justify-between py-1">
-                                    <div className="flex flex-col justify-center items-center gap-1 p-2 border-r-2 border-gray-200"> <span className="tabular-nums text-[#57b490] text-3xl font-bold duration-[3s] ease-out"> <CountUp end={30} enableScrollSpy /> </span> <span className="text-xs font-medium text-gray-600">Network Length (km)<span className="text-red-600">*</span></span></div>
-                                    <div className="flex flex-col justify-center items-center gap-1 p-2 border-r-2 border-gray-200"> <span className="tabular-nums text-[#57b490] text-3xl font-bold duration-[3s] ease-out"> <CountUp end={2} enableScrollSpy /> </span> <span className="text-xs font-medium text-gray-600">No. of Lines<span className="text-red-600">*</span></span></div>
-                                    <div className="flex flex-col justify-center items-center gap-1 p-2"> <span className="tabular-nums text-[#57b490] text-3xl font-bold duration-[3s] ease-out"> <CountUp end={28} enableScrollSpy /> </span> <span className="text-xs font-medium text-gray-600">No. of Stations<span className="text-red-600">*</span></span></div>
+                            {/* Route search form vala colomn 2 */}
+                            <div className="shadow-md bg-[#f5ffef] border border-[#b3d09f] rounded-lg p-4">
+
+                                <div className="flex items-center gap-2"> <SearchIcon className="text-[#bef39e]" fontSize="large" /> <h2 className="text-lg font-medium text-gray-800">Know Your Station</h2></div>
+                                <input type="text" name="aboutStation" id="aboutStation" className="my-3 shadow-sm text-gray-900 rounded-md focus:outline-none focus:ring-0 border border-gray-300 focus:border-gray-400 block w-full p-2" placeholder="Search station or click to select" required />
+                                <div className="mt-4 flex justify-end items-center">
+                                    <button className="bg-[#02555b] rounded-md text-white font-medium text-sm p-2 px-6" type="submit">Search Advanced</button>
                                 </div>
-                                <div className="text-xs text-gray-600 font-normal"> <span className="text-red-600">*</span>Only 6 stations is working yet, from Mankameshwar to Taj East Gate.</div>
 
                             </div>
-                            <div className="col-span- shadow-md rounded-lg p-2 bg-pink-200">Promotion section</div>
+
+
+                            {/* Promotion & Notification colomn 3 */}
+                            <div className="shadow-md rounded-lg p-2 bg-pink-200 flex justify-center items-center">I love you priye<span className="ml-2" style={{color: "red", fontSize: "200%"}} >&hearts;</span> 
+</div>
 
                         </div>
 
