@@ -50,8 +50,8 @@ const Home = () => {
 
                         <div style={{ border: "2px solid blac" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-6 p-4">
 
-                            {/* Route search form vala colomn 1 */}
-                            <div style={{ border: "2px solid gree" }} className="row-span-2 shadow-md bg-[#c7edfe] p-4 rounded-lg">
+                            {/* Route search form vala colomn 1 #c7edfe before:bg-[length:300px_200px]*/}
+                            <div className="before:absolute before:bg-contain overflow-hidden before:h-56 before:w-full before:top-20 before:left-4 sm:before:left-14 before:opacity-10 before:bg-no-repeat before:bg-cente before:bg-[url('/watermarks/metro4.png')] relative row-span-2 shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg">
                                 <div className="flex items-center gap-2"> <img height="40px" width="40px" src="/UPMRC.png" alt="Metro Agra Logo" /> <span className="text-lg font-medium text-gray-800">Plan Your Journey</span></div>
                                 <div className="text-sm my-4 text-gray-700">Click here to plan through <span className="text-blue-600">Interactive Map</span></div>
 
@@ -139,8 +139,8 @@ const Home = () => {
                                             </div>}
                                     </div>
 
-                                    <div className="mt-10 flex justify-between items-center">
-                                        <button className="font-medium text-sm underline" type="reset">Reset</button>
+                                    <div className="mt-10 z-50 flex justify-between items-center">
+                                        <button className="font-medium text-gray-700 text-sm underline" type="reset">Reset</button>
                                         <button className="bg-[#c0282c] rounded-md text-white font-medium text-sm p-2 px-6" type="submit">Show Route & Fare</button>
                                     </div>
 
