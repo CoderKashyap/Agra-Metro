@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AgraMetroLogo from "/metroAgraLogo.webp";
+import SearchIcon from '@mui/icons-material/Search';
 // import Slide from '@mui/material/Slide';
 
 
@@ -23,7 +24,7 @@ const Navbar = () => {
                 <NavLink
                     to="/" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
+                        isPending ? "pending" : isActive ? "text-black" : "text-gray-600"
                     }
                 >
                     Home
@@ -31,7 +32,7 @@ const Navbar = () => {
                 <NavLink
                     to="/station" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
+                        isPending ? "pending" : isActive ? "text-black" : "text-gray-600"
                     }
                 >
                     Station
@@ -39,7 +40,7 @@ const Navbar = () => {
                 <NavLink
                     to="/facilities" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
+                        isPending ? "pending" : isActive ? "text-black" : "text-gray-600"
                     }
                 >
                     Facilities
@@ -47,7 +48,7 @@ const Navbar = () => {
                 <NavLink
                     to="/network" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
+                        isPending ? "pending" : isActive ? "text-black" : "text-gray-600"
                     }
                 >
                     Network
@@ -55,7 +56,7 @@ const Navbar = () => {
                 <NavLink
                     to="/helpcontact" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
+                        isPending ? "pending" : isActive ? "text-black" : "text-gray-600"
                     }
                 >
                     Help & Contact
@@ -63,19 +64,12 @@ const Navbar = () => {
                 <NavLink
                     to="/blogs" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
+                        isPending ? "pending" : isActive ? "text-black" : "text-gray-600"
                     }
                 >
                     Blogs
                 </NavLink>
-                <NavLink
-                    to="/faqs" onClick={toggleNav}
-                    className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-blue-900" : ""
-                    }
-                >
-                    FAQ's
-                </NavLink>
+
             </>
         );
     };
@@ -83,8 +77,9 @@ const Navbar = () => {
     return (
         <>
             <header className="shadow-md">
+
                 <div className="mx-auto py-2 px-4 md:flex md:items-center md:justify-between lg:mx-10">
-                   
+
                     <div className="flex items-center justify-between">
                         <NavLink to="/" >
                             <img className='h-12 lg:h-16' src={AgraMetroLogo} alt="" />
@@ -131,47 +126,45 @@ const Navbar = () => {
 
                     <div className='flex'>
 
-                        <nav className="hidden md:flex space-x-6">
+                        <nav className="hidden md:flex space-x-5">
                             {navList()}
                         </nav>
 
-                        {/* <div onClick={toggleAvatarDropdown} className="relative transition-all duration-500">
-                        <span className="cursor-pointer">Avatar</span>
-                        <div className={`absolute ${openAvatarDropdown ? 'block' : 'hidden'} bg-slate-300 rounded shadow-md mt-2 space-y-2`}>
-                            <div className='p-4 flex flex-col '>
-                                <NavLink to="/profile">Profile</NavLink>
-                                <NavLink to="/dashboard">Dashboard</NavLink>
-                            </div>
-                        </div>
-                        </div> */}
 
                     </div>
 
-                    <div className='lg:flex hidden'>Search</div>
+                    {/* Search bar */}
+                    <div className='md:flex hidden relative'>
+                        <input type="search" name="serch" placeholder="Search latest updates" className="bg-gray-50 text-gray-500 border border-gray-300 h-10 px-3 pr-12 rounded-full text-sm focus:outline-none" />
+                        <button type="submit" className="border p-1 px-2 border-gray-300 text-gray-500 cursor-pointer absolute right-1.5 top-[0.35rem] rounded-2xl flex justify-center items-center">
+                            <SearchIcon className="" fontSize="small" />
+                        </button>
+                    </div>
 
                 </div>
-
-                {/* <div className={`${openNav ? 'block' : 'hidden'} bg-white p-6 z-10 md:hidden w-full sticky bottom-0`}>
-                <div className="bg-gray-200 flex flex-col gap-4 p-6 rounded-lg"
-                >
-                    {navList()}
-                </div>
-            </div> */}
 
             </header>
 
-            <div className={`${openNav ? 'block' : 'hidden'} backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-end items-end z-10 md:hidden h-screen w-full absolute bottom-0`}>
 
-                <div className='w-full flex justify-center items-center mb-10'>
+            {/* Phone view  */}
+            <div className={`${openNav ? 'block' : 'hidden'} backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-end items-end z-10 md:hidden h-screen w-full absolut fixed top-0 left-0 right-0 bottom-0`}>
+
+                <div className='w-full flex justify-center items-center mb-5'>
                     <NavLink to="/" className="bg-gray-100 rounded-full px-4 py-3" onClick={toggleNav}>
                         <img className='h-12 lg:h-full' src={AgraMetroLogo} alt="" />
                     </NavLink>
                 </div>
 
+                <div className='flex md:hidden relative w-full'>
+                    <input type="search" name="serch" placeholder="Search latest updates" className="bg-gray-50 text-gray-500 border border-gray-300 h-11 w-full px-5 pr-12 rounded-full text-sm focus:outline-none" />
+                    <button type="submit" className="border p-1 px-2 border-gray-300 text-gray-500 cursor-pointer absolute right-2 top-2 rounded-2xl flex justify-center items-center">
+                        <SearchIcon className="" fontSize="small" />
+                    </button>
+                </div>
+
                 <div className="bg-gray-100 flex flex-col gap-4 p-6 rounded-lg w-full font-medium">
                     {navList()}
                 </div>
-
 
                 <button
                     onClick={toggleNav}
