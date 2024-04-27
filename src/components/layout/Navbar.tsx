@@ -147,7 +147,7 @@ const Navbar = () => {
 
 
             {/* Phone view  */}
-            <div className={`${openNav ? 'block' : 'hidden'} backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-end items-end z-10 md:hidden h-screen w-full absolut fixed top-0 left-0 right-0 bottom-0`}>
+            <div className={`${openNav ? 'block' : 'hidden'} backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-center items-end z-10 md:hidden h-screen w-full absolut fixed top-0 left-0 right-0 bottom-0`}>
 
                 <div className='w-full flex justify-center items-center mb-5'>
                     <NavLink to="/" className="bg-gray-100 rounded-full px-4 py-3" onClick={toggleNav}>
