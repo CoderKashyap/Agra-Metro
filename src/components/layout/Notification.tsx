@@ -1,28 +1,30 @@
-import { useEffect, useState } from 'react';
+// import { useState } from 'react';
 // import { useDispatch, useSelector } from "react-redux";
 import Drawer from '@mui/material/Drawer';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import NotificationMenu from './NotificationMenu';
 
+interface NotificationProps {
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    notificationDot?: any;
+}
 
-const Notification = ({ open, setOpen, notificationDot = null }) => {
+const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
+    // const navigate = useNavigate();
 
-    // const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const [selectType, setNotifyType] = useState<string>("general");
+    // const [filteredNotify, setFilteredNotify] = useState<any[]>([]);
+    // const [interactedMap, setInteractedMap] = useState<any>({});
+    // const [showSpecificDot, setSpecificDot] = useState<boolean>(false);
+    // const [singleNotificationData, setSingleNotificationData] = useState<any>({});
 
+    // const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
-    const [selectType, setNotifyType] = useState("general");
-    const [filteredNotify, setFilteredNotify] = useState([]);
-    const [interactedMap, setInteractedMap] = useState({});
-    const [showSpecificDot, setSpecificDot] = useState(false);
-
-    const [anchorEl, setAnchorEl] = useState(false);
-    const [singleNotificationData, setSingleNotificationData] = useState({});
-
-    const openMenu = Boolean(anchorEl);
+    // const openMenu = Boolean(anchorEl);
 
     // const handleClick = (event, data) => {
     //     setSingleNotificationData(data)
