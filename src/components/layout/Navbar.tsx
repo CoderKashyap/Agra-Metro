@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AgraMetroLogo from "/metroAgraLogo.webp";
 // import Slide from '@mui/material/Slide';
-
+import Notification from './Notification';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 const Navbar = () => {
     const [openNav, setOpenNav] = useState(false);
+    const [openNotification, setOpenNotification] = useState(false);
     // const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
 
     const toggleNav = () => {
@@ -84,7 +86,7 @@ const Navbar = () => {
         <>
             <header className="shadow-md">
                 <div className="mx-auto py-2 px-4 md:flex md:items-center md:justify-between lg:mx-10">
-                   
+
                     <div className="flex items-center justify-between">
                         <NavLink to="/" >
                             <img className='h-12 lg:h-16' src={AgraMetroLogo} alt="" />
@@ -149,6 +151,8 @@ const Navbar = () => {
 
                     <div className='lg:flex hidden'>Search</div>
 
+                    <div className='hover:cursor-pointer animate-pulse' onClick={()=>setOpenNotification(true)}><NotificationsActiveIcon fontSize='medium' /></div>
+
                 </div>
 
                 {/* <div className={`${openNav ? 'block' : 'hidden'} bg-white p-6 z-10 md:hidden w-full sticky bottom-0`}>
@@ -194,7 +198,11 @@ const Navbar = () => {
                 </button>
 
             </div>
-
+            {
+                openNotification ?
+                    <Notification open={openNotification} setOpen={setOpenNotification} />
+                    : null
+            }
         </>
     );
 };
