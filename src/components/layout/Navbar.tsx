@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import AgraMetroLogo from "/metroAgraLogo.webp";
 import SearchIcon from '@mui/icons-material/Search';
 // import Slide from '@mui/material/Slide';
-
+import Notification from './Notification';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 const Navbar = () => {
     const [openNav, setOpenNav] = useState(false);
+    const [openNotification, setOpenNotification] = useState(false);
     // const [openAvatarDropdown, setOpenAvatarDropdown] = useState(false);
 
     const toggleNav = () => {
@@ -141,6 +143,8 @@ const Navbar = () => {
                         </button>
                     </div>
 
+                    <div className='hover:cursor-pointer animate-pulse' onClick={()=>setOpenNotification(true)}><NotificationsActiveIcon fontSize='medium' /></div>
+
                 </div>
 
             </header>
@@ -187,7 +191,11 @@ const Navbar = () => {
                 </button>
 
             </div>
-
+            {
+                openNotification ?
+                    <Notification open={openNotification} setOpen={setOpenNotification} />
+                    : null
+            }
         </>
     );
 };
