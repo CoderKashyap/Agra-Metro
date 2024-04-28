@@ -4,7 +4,7 @@ import AgraMetroLogo from "/metroAgraLogo.webp";
 import SearchIcon from '@mui/icons-material/Search';
 // import Slide from '@mui/material/Slide';
 import Notification from './Notification';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+// import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 const Navbar = () => {
     const [openNav, setOpenNav] = useState(false);
@@ -39,6 +39,12 @@ const Navbar = () => {
                 >
                     Station
                 </NavLink>
+                <div
+                    onClick={() => { setOpenNotification(true); toggleNav() }}
+                    className={"text-gray-600 hover:cursor-pointer"}
+                >
+                    Notices & Alerts
+                </div>
                 <NavLink
                     to="/facilities" onClick={toggleNav}
                     className={({ isActive, isPending }) =>
@@ -80,7 +86,7 @@ const Navbar = () => {
         <>
             <header className="shadow-md">
 
-                <div className="mx-auto py-2 px-4 md:flex md:items-center md:justify-between lg:mx-10">
+                <div className="mx-auto py-2 px-4 lg:flex md:items-center md:justify-between lg:mx-10">
 
                     <div className="flex items-center justify-between">
                         <NavLink to="/" >
@@ -89,7 +95,7 @@ const Navbar = () => {
 
                         <button
                             onClick={toggleNav}
-                            className="block shadow-md md:hidden border border-gray-600 p-2 rounded-xl text-gray-600 bg-white"
+                            className="block shadow-md lg:hidden border border-gray-600 p-2 rounded-xl text-gray-600 bg-white"
                         >
                             <svg
                                 className={`w-6 h-6 ${openNav ? 'hidden' : 'block'}`}
@@ -128,22 +134,24 @@ const Navbar = () => {
 
                     <div className='flex'>
 
-                        <nav className="hidden md:flex space-x-5">
+                        <nav className="hidden lg:flex space-x-5">
                             {navList()}
                         </nav>
 
 
                     </div>
 
+
+                    {/* <div className='hover:cursor-pointer animate-pulse' onClick={() => setOpenNotification(true)}><NotificationsActiveIcon fontSize='medium' /></div> */}
+
                     {/* Search bar */}
-                    <div className='md:flex hidden relative'>
+                    <div className='lg:flex hidden relative'>
                         <input type="search" name="serch" placeholder="Search latest updates" className="bg-gray-50 text-gray-500 border border-gray-300 h-10 px-3 pr-12 rounded-full text-sm focus:outline-none" />
                         <button type="submit" className="border p-1 px-2 border-gray-300 text-gray-500 cursor-pointer absolute right-1.5 top-[0.35rem] rounded-2xl flex justify-center items-center">
                             <SearchIcon className="" fontSize="small" />
                         </button>
                     </div>
 
-                    <div className='hover:cursor-pointer animate-pulse' onClick={()=>setOpenNotification(true)}><NotificationsActiveIcon fontSize='medium' /></div>
 
                 </div>
 
