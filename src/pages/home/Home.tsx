@@ -2,6 +2,7 @@ import MetaData from "../../components/layout/MetaData";
 import "./home.css";
 import PlanYourJourneyCol from "../../components/home/PlanYourJourneyCol";
 import KnowYourLocationCol from "../../components/home/KnowYourLocationCol";
+import NumericCounterInfo from "../../components/home/NumericCounterInfo";
 
 
 const Home = () => {
@@ -32,6 +33,8 @@ const Home = () => {
                             </div>
 
                         </div>
+
+                        <NumericCounterInfo />
 
                     </div>
                 </div>

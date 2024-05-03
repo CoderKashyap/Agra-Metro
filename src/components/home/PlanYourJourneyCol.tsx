@@ -41,9 +41,9 @@ const PlanYourJourneyCol = () => {
 
     return (
         <>
-            <div onClick={() => { setShowFromStation(false); setShowToStation(false) }} className="before:absolute before:bg-contain before:h-56 before:w-full before:top-20 before:left-4 sm:before:left-14 before:opacity-10 before:bg-no-repeat before:bg-cente before:bg-[url('/watermarks/metro4.png')] relative row-span-2 shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg">
+            <div onClick={() => { setShowFromStation(false); setShowToStation(false) }} className="before:absolute before:bg-contain before:h-56 before:w-full before:top-20 before:left-4 sm:before:left-14 before:opacity-10 before:bg-no-repeat before:bg-cente before:bg-[url('/watermarks/metro4.png')] relative shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg">
                 <div className="flex items-center gap-2"> <img height="40px" width="40px" src="/UPMRC.png" alt="Metro Agra Logo" /> <span className="text-lg font-medium text-gray-800">Plan Your Journey</span></div>
-                <div className="text-sm my-4 text-gray-700">Click here to plan through <span className="text-blue-600">Interactive Map</span></div>
+                <div className="text-sm my-6 text-gray-700">Click here to plan through <span className="text-blue-600">Interactive Map</span></div>
 
                 <form>
                     {/* From Station */}
