@@ -105,9 +105,9 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
                         </div> */}
                         <div className='bg-white mt-2 border-t'>
                             <ul className='px-2 '>
-                                <li className={`transition-all duration-200  ease-in-out border rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2 bg-white`} >
+                                <li className={`transition-all duration-200  ease-in-out border border-yellow-500 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2`} >
                                     <div className='px-1 flex items-start justify-center gap-x-2'>
-                                        <span className={`group-hover:text-[#6366f1] transition-all duration-200 ease-in-out`}><CircleNotificationsIcon fontSize='large' /></span>
+                                        <span className={`text-yellow-500 transition-all duration-200 ease-in-out`}><CircleNotificationsIcon fontSize='large' /></span>
                                         <span className='hover:cursor-pointer text-black text-sm w-[15rem]'>
                                             <p className='font-semibold'>notification title</p>
                                             <p className={`text-gray-500 truncate w-fit max-w-[14rem]`}>description</p>
