@@ -4,9 +4,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Appstore_Logo from "/Appstore.webp";
 import Playstore_Logo from "/playstore.webp";
-// import FacebookIcon from "/facebook-logo.svg";
-// import TwitterIcon from "/twitter-logo.svg";
-// import InstagramIcon from "/instagram-logo.svg";
 
 const Footer = () => {
   return (
@@ -109,21 +106,18 @@ const Footer = () => {
                       className="transition-all duration-200 ease-in-out delay-75 hover:cursor-pointer text-gray-700 hover:text-[#3B5998]"
                     >
                       <FacebookIcon fontSize="medium" />
-                      {/* <img src={FacebookIcon} className="h-10 object-contain" alt="" /> */}
                     </li>
                     <li
                       title="Twitter Page"
                       className="transition-all duration-200 ease-in-out delay-75 hover:cursor-pointer text-gray-700 hover:text-black"
                     >
                       <XIcon fontSize="medium" />
-                      {/* <img src={TwitterIcon} className="h-10 object-contain" alt="" /> */}
                     </li>
                     <li
                       title="Instagram Page"
                       className="transition-all duration-200 ease-in-out delay-75 hover:cursor-pointer text-gray-700 hover:text-[#C13584] "
                     >
                       <InstagramIcon fontSize="medium" />
-                      {/* <img src={InstagramIcon} className="h-10 object-contain" alt=""  /> */}
                     </li>
                   </ul>
                 </div>
