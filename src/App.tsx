@@ -1,12 +1,9 @@
-
-
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
 function App() {
-
   return (
     <>
       <Navbar />
@@ -17,7 +14,7 @@ function App() {
 
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
