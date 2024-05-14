@@ -3,6 +3,7 @@ import "./home.css";
 import PlanYourJourneyCol from "../../components/home/PlanYourJourneyCol";
 import KnowYourLocationCol from "../../components/home/KnowYourLocationCol";
 import NumericCounterInfo from "../../components/home/NumericCounterInfo";
+import Features from "../../components/home/Features";
 
 const Home = () => {
     return (
@@ -37,6 +38,8 @@ const Home = () => {
                         </div>
 
                         <NumericCounterInfo />
+
+                        <Features />
 
                     </div>
                 </div>
