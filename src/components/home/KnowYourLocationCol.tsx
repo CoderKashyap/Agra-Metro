@@ -1,11 +1,10 @@
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
-
+import { useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import PinDropIcon from '@mui/icons-material/PinDrop';
+import ZoomInMapOutlinedIcon from '@mui/icons-material/ZoomInMapOutlined';
 
 const KnowYourLocationCol = () => {
-
+    const [isZoom, setIsZoom] = useState(false)
 
 
     return (
@@ -31,17 +30,27 @@ const KnowYourLocationCol = () => {
 
                     <div className="flex items-center gap-2 mb-2"> <PinDropIcon className="text-gray-300" fontSize="medium" /> <h2 className="text-lg font-medium text-gray-800">Agra Metro Map</h2></div>
 
-                    <div className="overflow-hidden rounded-lg h-28 cursor-pointer">
+                    <div onClick={() => setIsZoom(true)} className="overflow-hidden rounded-lg h-28 cursor-pointer">
 
-                        <Zoom>
-                            <img width="500" className="transition-transform duration-300 transform hover:scale-110" src="/agra-route-map.png" alt="" srcSet="/agra-route-map.png" />
-                        </Zoom>
+                        <img width="500" className="transition-transform duration-300 transform hover:scale-110" src="/agra-route-map.png" alt="" srcSet="/agra-route-map.png" />
+
                     </div>
 
                 </div>
 
 
             </div>
+
+            {isZoom &&
+                <div className='h-full w-full fixed top-0 left-0 bg-white'>
+                    <div className="flex justify-center items-center h-screen">
+                        <img width="1020" className="" src="/agra-route-map.png" alt="" srcSet="/agra-route-map.png" />
+                    </div>
+                    <span onClick={() => setIsZoom(false)} className='cursor-pointer fixed border border-1 border-gray-800 p-3 rounded-full text-gray-600 bottom-20 right-24'>
+                        <ZoomInMapOutlinedIcon fontSize='medium' />
+                    </span>
+                </div>
+            }
         </>
     )
 }

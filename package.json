@@ -18,8 +18,8 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
-    "react-medium-image-zoom": "^5.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "react-zoom-pan-pinch": "^3.4.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
