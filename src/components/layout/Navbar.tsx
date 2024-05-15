@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import AgraMetroLogo from "/metroAgraLogo.webp";
 import SearchIcon from "@mui/icons-material/Search";
 import Notification from "./Notification";
-// import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -94,63 +94,77 @@ const Navbar = () => {
             <NavLink to="/">
               <img className="h-12 lg:h-16" src={AgraMetroLogo} alt="" />
             </NavLink>
-
-            <button
-              onClick={toggleNav}
-              className="block shadow-md lg:hidden border border-gray-600 p-2 rounded-xl text-gray-600 bg-white"
+            <div className="lg:hidden flex items-center gap-x-4">
+              <div
+              className="hover:cursor-pointer text-amber-500"
+              onClick={() => setOpenNotification(true)}
             >
-              <svg
-                className={`w-6 h-6 ${openNav ? "hidden" : "block"}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+              <NotificationsActiveIcon fontSize="medium" />
+            </div>
+              <button
+                onClick={toggleNav}
+                className="block shadow-md lg:hidden border border-gray-600 p-2 rounded-xl text-gray-600 bg-white"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
+                <svg
+                  className={`w-6 h-6 ${openNav ? "hidden" : "block"}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
 
-              <svg
-                className={`w-6 h-6 ${openNav ? "block" : "hidden"}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            </button>
+                <svg
+                  className={`w-6 h-6 ${openNav ? "block" : "hidden"}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div className="flex">
             <nav className="hidden lg:flex space-x-5">{navList()}</nav>
           </div>
 
-          {/* <div className='hover:cursor-pointer animate-pulse' onClick={() => setOpenNotification(true)}><NotificationsActiveIcon fontSize='medium' /></div> */}
-
-          {/* Search bar */}
-          <div className="lg:flex hidden relative">
-            <input
-              type="search"
-              name="serch"
-              placeholder="Search latest updates"
-              className="bg-gray-50 text-gray-500 border border-gray-300 h-10 px-3 pr-12 rounded-full text-sm focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="border p-1 px-2 border-gray-300 text-gray-500 cursor-pointer absolute right-1.5 top-[0.35rem] rounded-2xl flex justify-center items-center"
+          <div className="lg:flex items-center gap-x-4 hidden relative">
+            <div
+              className="hover:cursor-pointer text-amber-500"
+              onClick={() => setOpenNotification(true)}
             >
-              <SearchIcon className="" fontSize="small" />
-            </button>
+              <NotificationsActiveIcon fontSize="medium" />
+            </div>
+
+            {/* Search bar */}
+            <div className="">
+              <input
+                type="search"
+                name="serch"
+                placeholder="Search latest updates"
+                className="bg-gray-50 text-gray-500 border border-gray-300 h-10 px-3 pr-6 rounded-full text-sm focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="border p-1 px-2 border-gray-300 text-gray-500 cursor-pointer absolute right-1.5 top-[0.35rem] rounded-2xl flex justify-center items-center"
+              >
+                <SearchIcon className="" fontSize="small" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -189,7 +203,6 @@ const Navbar = () => {
         <div className="bg-gray-100 flex flex-col gap-4 p-6 rounded-lg w-full font-medium">
           {navList()}
         </div>
-
         <button
           onClick={toggleNav}
           className="block lg:hidden border border-white bg-whit bg-gray-100 p-2 rounded-full text-gray-600"
