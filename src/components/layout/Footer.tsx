@@ -10,18 +10,18 @@ const Footer = () => {
     <>
       <footer className=" bg-gray-100">
         <div className="mx-auto md:mx-6 xl:mx-10 px-4 py-4">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 md:gap-y-4">
             <div className="col-span-1 md:col-span-3 justify-self-center">
-              <div className="">
-                <img src={Logo} alt="delhimetrorail" className="h-12 lg:h-16" />
+              <div className="my-4 md:my-0">
+                <img src={Logo} alt="delhimetrorail" className="h-14 lg:h-16" />
               </div>
             </div>
             <div className="col-span-1 md:col-span-9">
               <div className="px-4">
-                <h3 className="text-xl font-bold w-full text-center md:text-left">
+                <h3 className="my-4 md:my-0 text-xl font-bold  md:text-left">
                   Quick Links
                 </h3>
-                <ul className="text-sm grid grid-cols-2 justify-items-center gap-y-2 md:flex md:flex-row md:items-center justify-start md:divide-x-2 divide-gray-500 my-4">
+                <ul className="text-sm grid grid-cols-2  gap-y-2 md:flex md:flex-wrap md:flex-row md:items-center justify-start md:divide-x-2 divide-gray-500 my-4">
                   <li className="leading-4 md:pr-2 hover:text-red-700">
                     <a href="/miscellaneous">Miscellaneous</a>
                   </li>
@@ -48,7 +48,7 @@ const Footer = () => {
                 </ul>
               </div>
               <hr className="mx-4 border-0.5 border-gray-300" />
-              <div className="flex items-center flex-col-reverse md:flex-row md:items-start justify-between gap-x-4 mt-4 w-full">
+              <div className="px-4 flex items-center flex-col-reverse md:flex-row md:items-start justify-between gap-x-4 mt-4 w-full">
                 {/* <div className="basis-[35%] grid grid-cols-2 w-full text-sm">
                   <div className="col-span-1 px-4 ">
                     <h3 className="font-bold text-base">Links</h3>
@@ -67,8 +67,8 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div> */}
-                <div className="basis-1/3 w-full my-2 md:m-0">
-                  <ul className="flex items-center justify-center gap-x-4">
+                <div className="basis-1/2 w-full my-2 md:m-0">
+                  <ul className="flex items-center justify-center md:justify-start gap-x-4">
                     <li className="w-fit flex justify-center">
                       <img
                         src={Playstore_Logo}
@@ -89,8 +89,8 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="basis-1/4 my-2 md:m-0 w-full ">
-                  <ul className="flex items-center justify-center md:justify-end gap-x-2 lg:gap-x-4 px-4">
+                <div className="basis-1/2 my-2 md:m-0 w-full ">
+                  <ul className="flex items-center justify-center md:justify-end gap-x-2 lg:gap-x-4">
                     <li
                       title="Facebook Page"
                       className="transition-all duration-200 ease-in-out delay-75 hover:cursor-pointer text-gray-700 hover:text-[#3B5998]"
@@ -116,18 +116,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-y-2 md:flex-row items-center justify-between bg-black text-white h-full py-4 px-10">
-          <div className="text-sm">
-            <p className="font-semibold">
-              <span> &copy; {new Date().getFullYear()}.</span>
-              <span> All right reserved. &nbsp;</span>
-            </p>
-          </div>
-          <div className="text-sm font-semibold">
-            <p>Under Development</p>
-          </div>
-          <div className="flex items-center divide-x-2 leading-4 text-sm">
-            <div className="pr-2">Company Logo</div>
-          </div>
+          <p className="text-xs font-medium">Designed & Developed XYZ</p>
+          <p className="text-sm font-semibold">
+            <span> &copy; {new Date().getFullYear()}.</span>
+            <span> All right reserved. &nbsp;</span>
+          </p>
         </div>
       </footer>
     </>
