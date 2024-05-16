@@ -88,7 +88,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="shadow-md">
+      <header className="shadow-md sticky z-20 bg-white top-0 left-0">
         <div className="mx-auto py-2 px-4 lg:flex md:items-center md:justify-between lg:mx-10">
           <div className="flex items-center justify-between">
             <NavLink to="/">
@@ -170,8 +170,7 @@ const Navbar = () => {
       </header>
 
       {/* Phone view  */}
-      <div
-        className={`${
+      <div className={`${
           openNav ? "block" : "hidden"
         } backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-center items-end z-10 lg:hidden h-screen w-full absolut fixed top-0 left-0 right-0 bottom-0`}
       >
@@ -223,6 +222,8 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+
+
       {openNotification ? (
         <Notification open={openNotification} setOpen={setOpenNotification} />
       ) : null}

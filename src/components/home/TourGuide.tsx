@@ -1,7 +1,7 @@
 
 import banner1 from "/Appstore.webp";
 
-export default function Features() {
+export default function TourGuide() {
 
     const bannerData = [
         {

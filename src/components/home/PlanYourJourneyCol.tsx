@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 
 const stations = [{ stationName: "Taj East Gate", stationImgUrl: "" }, { stationName: "Basai", stationImgUrl: "" }, { stationName: "Fatehabad Road", stationImgUrl: "" }, { stationName: "Taj Mahal", stationImgUrl: "" }, { stationName: "Agra Fort", stationImgUrl: "" }, { stationName: "Mankameshwar", stationImgUrl: "" }]
 
@@ -9,7 +10,6 @@ const PlanYourJourneyCol = () => {
 
 
     const [fromStation, setFromStation] = useState("");
-
     const [showFromStation, setShowFromStation] = useState(false);
     const [fromStationObjRemake, setFromStationObjRemake] = useState<Array<{ stationName: string }>>([]);
     const [toStationObjRemake, setToStationObjRemake] = useState<Array<{ stationName: string }>>([]);
@@ -37,6 +37,11 @@ const PlanYourJourneyCol = () => {
         if (stationName.length > 0) { setShowToStation(true) } else { setShowToStation(false); setToStationObjRemake(stations) }
     }
 
+    const resetPlanJourneyForm = () => {
+        setFromStation("")
+        setToStation("")
+    }
+
 
 
     return (
@@ -46,6 +51,7 @@ const PlanYourJourneyCol = () => {
                 <div className="text-sm my-4 text-gray-700">Click here to plan through <span className="text-blue-600">Interactive Map</span></div>
 
                 <form className="md:py-4">
+
                     {/* From Station */}
                     <div onClick={(e) => e.stopPropagation()} className="relative">
                         <label htmlFor="fromStation" className="text-sm font-medium text-red-700 block mb-1">From</label>
@@ -70,21 +76,29 @@ const PlanYourJourneyCol = () => {
                             </>}
 
 
+                        {/* From station dropdown  */}
                         {showFromStation &&
-                            <div className={`p-1 border border-gray-300 absolute w-full z-10 rounded-b-lg bg-white overflow-y-auto h-auto max-h-64`}>
+                            <div className={`p-0 border border-gray-300 absolute w-full z-10 rounded-b-lg bg-[#fffef7] overflow-y-auto h-auto max-h-68`}>
 
 
                                 {fromStationObjRemake && fromStationObjRemake.map((station: { stationName: string }, index: number) => (
-                                    <div onClick={() => { setFromStation(station.stationName); setShowFromStation(false); }} key={index} className="flex gap-2 mx-2 my-3 items-center cursor-pointer">
-                                        {/* <img className="sm:h-18 sm:w-18 h-10 w-8 mx-2 object-contain" src="/metroAgraLogo.webp"
-                                            data-src="/metroAgraLogo.webp"
-                                            loading="lazy"
-                                            alt="brandImage"></img> */}
+                                    <div onClick={() => { setFromStation(station.stationName); setShowFromStation(false); }} key={index} className="px-2 relative flex gap-2 mx-2 my-3 items-center cursor-pointer">
 
-                                        <span className="px-1.5 text-whit text-sm border border-yellow-400 bg-yellow-200 rounded-full">{index + 1}</span>
+
+                                        {index < fromStationObjRemake.length - 1 && (
+                                            <span className="absolute top-4 rotate-90 -z-10 text-yellow-400">
+                                                <HorizontalRuleIcon />
+                                            </span>
+                                        )}
+
+                                        <span className="px-1.5 text-sm border border-yellow-400 bg-yellow-400 font-semibold text-white rounded-full">{index + 1}</span>
                                         <span className="ml-2 text-md"> {station.stationName} </span>
                                     </div>
                                 ))}
+
+
+                                <div className="bg-[#f6d71a] bottom-0 left-0 right-0 flex justify-between items-center text-sm font-semibold text-white px-5 py-1.5"> <span>Line 1</span><span className="flex justify-center items-center gap-2">Yellow<span className="px-1.5 bg-white text-yellow-300 rounded-full">1</span> </span>
+                                </div>
 
                             </div>}
 
@@ -114,26 +128,37 @@ const PlanYourJourneyCol = () => {
                             </>}
 
 
+                        {/* To station dropdown  */}
                         {showToStation &&
-                            <div className={`p-1 border border-gray-300 absolute w-full z-20 rounded-b-lg bg-white overflow-y-auto h-auto max-h-64`}>
+                            <div className={`p-0 border border-gray-300 absolute w-full z-20 rounded-b-lg bg-[#fffef7] overflow-y-auto h-auto max-h-68`}>
 
 
                                 {toStationObjRemake && toStationObjRemake.map((station: { stationName: string }, index: number) => (
-                                    <div onClick={() => { setToStation(station.stationName); setShowToStation(false); }} key={index} className="flex gap-2 mx-2 my-3 items-center cursor-pointer">
+                                    <div onClick={() => { setToStation(station.stationName); setShowToStation(false); }} key={index} className="px-2 relative flex gap-2 mx-2 my-3 items-center cursor-pointer">
                                         {/* <img className="sm:h-18 sm:w-18 h-10 w-8 ml-2 object-contain" src="/metroAgraLogo.webp"
                                             data-src="/metroAgraLogo.webp" // Store the high-quality image URL in a data attribute
                                             loading="lazy" // Enable lazy loading in supporting browsers
                                             alt="brandImage"></img> */}
-                                        <span className="px-1.5 text-whit text-sm border border-yellow-400 bg-yellow-200 rounded-full">{index + 1}</span>
+
+                                        {index < toStationObjRemake.length - 1 && (
+                                            <span className="absolute top-4 rotate-90 -z-10 text-yellow-400">
+                                                <HorizontalRuleIcon />
+                                            </span>
+                                        )}
+
+                                        <span className="px-1.5 text-sm border border-yellow-400 bg-yellow-400 font-semibold text-white rounded-full">{index + 1}</span>
                                         <span className="ml-2 text-md"> {station.stationName} </span>
                                     </div>
                                 ))}
+
+                                <div className="bg-[#f6d71a] bottom-0 left-0 right-0 flex justify-between items-center text-sm font-semibold text-white px-5 py-1.5"> <span>Line 1</span><span className="flex justify-center items-center gap-2">Yellow
+                                    <span className="px-1.5 bg-white text-yellow-300 rounded-full">1</span> </span></div>
 
                             </div>}
                     </div>
 
                     <div className="mt-10 z-50 flex justify-between items-center">
-                        <button className="font-medium text-gray-700 text-sm underline" type="reset">Reset</button>
+                        <button onClick={() => resetPlanJourneyForm()} className="font-medium text-gray-700 text-sm underline" type="reset">Reset</button>
                         <button className="bg-[#c0282c] rounded-md text-white font-medium text-sm p-2 px-6" type="submit">Show Route & Fare</button>
                     </div>
 
