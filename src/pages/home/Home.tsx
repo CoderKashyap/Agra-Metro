@@ -3,9 +3,9 @@ import "./home.css";
 import PlanYourJourneyCol from "../../components/home/PlanYourJourneyCol";
 import KnowYourLocationCol from "../../components/home/KnowYourLocationCol";
 import NumericCounterInfo from "../../components/home/NumericCounterInfo";
-import Features from "../../components/home/Features";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import Banner from "/Holibanner.webp";
+import TourGuide from "../../components/home/TourGuide";
 
 const Home = () => {
   return (
@@ -37,17 +37,22 @@ const Home = () => {
                                     &hearts;
                                 </span>
                             </div> */}
-              <div className="rounded-lg  flex flex-col items-center justify-between">
-                <div className="bg-white w-full rounded-lg">
-                  <div>
-                    <span className="animate-pulse text-green-500">
-                      <FiberManualRecordIcon fontSize="medium" />
-                    </span>
-                    <span>Active Users: 4</span>
-                    <span className="text-green-500">
-                      <FiberManualRecordIcon fontSize="medium" />
-                    </span>
-                    <span>Monthly Active Users: 4,000</span>
+              <div className="rounded-lg p-4 bg-pink-200  flex flex-col items-center justify-between gap-y-4">
+                <div className="px-4 py-2 bg-white w-full rounded-lg">
+                  <h3 className="font-semibold text-gray-600">Live Update</h3>
+                  <div className="flex flex-wrap gap-x-2 items-center justify-start">
+                    <p className="flex items-center min-w-fit text-sm">
+                      <span className="animate-pulse text-green-500">
+                        <FiberManualRecordIcon fontSize="small" />
+                      </span>
+                      <span>Active Users: 4k</span>
+                    </p>
+                    <p className="flex items-center min-w-fit text-sm">
+                      <span className="text-green-500">
+                        <FiberManualRecordIcon fontSize="small" />
+                      </span>
+                      <span>Monthly Users: 4,000</span>
+                    </p>
                   </div>
                 </div>
                 <div className=" ">
@@ -58,7 +63,7 @@ const Home = () => {
 
             <NumericCounterInfo />
 
-            <Features />
+            <TourGuide />
           </div>
         </div>
       </section>

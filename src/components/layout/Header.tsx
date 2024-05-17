@@ -144,7 +144,7 @@ const Navbar = () => {
 
           <div className="lg:flex items-center gap-x-6 hidden relative">
             <div
-              className="hover:cursor-pointer text-amber-500"
+              className="hover:cursor-pointer text-yellow-400"
               onClick={() => setOpenNotification(true)}
             >
               <CircleNotificationsIcon fontSize='large' />

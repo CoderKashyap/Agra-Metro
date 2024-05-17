@@ -91,7 +91,7 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
             <div className="">
               <ul className="px-2 overflow-y-auto h-[60vh]">
                 <li
-                  className={`transition-all duration-200  ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2`}
+                  className={`transition-all duration-200  ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 px-2 py-3 my-2`}
                 >
                   <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
                     <div
@@ -99,14 +99,14 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
                     >
                       <NotificationsActiveIcon fontSize="medium" />
                     </div>
-                    <div className="hover:cursor-pointer text-black text-sm w-full">
-                      <p className="font-semibold">notification title</p>
-                      <p className={`text-gray-500 w-fit max-w-[14rem]`}>
+                    <div className="group hover:cursor-pointer text-black text-sm w-full">
+                      <p className="font-semibold text-gray-600">notification title</p>
+                      <p className={`text-gray-500 group-hover:text-amber-500 w-fit max-w-[14rem]`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Magni deleniti nobis quae, aspernatur possimus veniam
                         repellendus quo rem facere quam?``
                       </p>
-                      <p className="min-w-fit text-xs self-end text-gray-600 font-semibold">
+                      <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-500 font-semibold">
                         Read More
                       </p>
                     </div>
@@ -121,14 +121,14 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
                     >
                       <NotificationsActiveIcon fontSize="medium" />
                     </div>
-                    <div className="hover:cursor-pointer text-black text-sm w-full">
-                      <p className="font-semibold">notification title</p>
-                      <p className={`text-gray-500 w-fit max-w-[14rem]`}>
+                    <div className="group hover:cursor-pointer text-black text-sm w-full">
+                      <p className="font-semibold text-gray-600">notification title</p>
+                      <p className={`text-gray-500 group-hover:text-amber-500 w-fit max-w-[14rem]`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Magni deleniti nobis quae, aspernatur possimus veniam
                         repellendus quo rem facere quam?``
                       </p>
-                      <p className="min-w-fit text-xs self-end text-gray-600 font-semibold">
+                      <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-500 font-semibold">
                         Read More
                       </p>
                     </div>
@@ -146,14 +146,14 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
                     >
                       <NotificationsActiveIcon fontSize="medium" />
                     </div>
-                    <div className="hover:cursor-pointer text-black text-sm w-full">
-                      <p className="font-semibold">notification title</p>
-                      <p className={`text-gray-500 w-fit max-w-[14rem]`}>
+                    <div className="group hover:cursor-pointer text-black text-sm w-full">
+                      <p className="font-semibold text-gray-600">notification title</p>
+                      <p className={`text-gray-500 group-hover:text-amber-500 w-fit max-w-[14rem]`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Magni deleniti nobis quae, aspernatur possimus veniam
                         repellendus quo rem facere quam?``
                       </p>
-                      <p className="min-w-fit text-xs self-end text-gray-600 font-semibold">
+                      <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-600 font-semibold">
                         Read More
                       </p>
                     </div>
