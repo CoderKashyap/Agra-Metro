@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import AgraMetroLogo from "/metroAgraLogo.webp";
 import SearchIcon from "@mui/icons-material/Search";
 import Notification from "./Notification";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -99,7 +99,7 @@ const Navbar = () => {
               className="hover:cursor-pointer text-amber-500"
               onClick={() => setOpenNotification(true)}
             >
-              <NotificationsActiveIcon fontSize="medium" />
+              <CircleNotificationsIcon fontSize='large' />
             </div>
               <button
                 onClick={toggleNav}
@@ -142,12 +142,12 @@ const Navbar = () => {
             <nav className="hidden lg:flex space-x-5">{navList()}</nav>
           </div>
 
-          <div className="lg:flex items-center gap-x-4 hidden relative">
+          <div className="lg:flex items-center gap-x-6 hidden relative">
             <div
               className="hover:cursor-pointer text-amber-500"
               onClick={() => setOpenNotification(true)}
             >
-              <NotificationsActiveIcon fontSize="medium" />
+              <CircleNotificationsIcon fontSize='large' />
             </div>
 
             {/* Search bar */}
@@ -222,11 +222,9 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-
-
-      {openNotification ? (
+      {/* {openNotification ? ( */}
         <Notification open={openNotification} setOpen={setOpenNotification} />
-      ) : null}
+      {/* ) : null} */}
       {/* <div className="text-white bg-yellow-500 p-2 rounded-full absolute z-20 bottom-0 md:bottom-24 right-4 animate-bounce hover:cursor-pointer" onClick={()=>setOpenNotification(true)}>
         <NotificationsActiveIcon fontSize="large" />
       </div> */}
