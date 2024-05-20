@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import PinDropIcon from '@mui/icons-material/PinDrop';
 import ZoomInMapOutlinedIcon from '@mui/icons-material/ZoomInMapOutlined';
+import "./index.css"
 
 const stations = [{ stationName: "Taj East Gate", stationImgUrl: "" }, { stationName: "Basai", stationImgUrl: "" }, { stationName: "Fatehabad Road", stationImgUrl: "" }, { stationName: "Taj Mahal", stationImgUrl: "" }, { stationName: "Agra Fort", stationImgUrl: "" }, { stationName: "Mankameshwar", stationImgUrl: "" }]
 
@@ -97,7 +98,7 @@ const KnowYourLocationCol = () => {
             </div>
 
             {isZoom &&
-                <div className='h-full z-20 w-full fixed top-0 left-0 bg-white'>
+                <div className='map-open h-full z-20 w-full fixed top-0 left-0 bg-white'>
                     <div className="flex justify-center items-center h-screen">
                         <img width="1020" className="" src="/agra-route-map.png" alt="" srcSet="/agra-route-map.png" />
                     </div>
