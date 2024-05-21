@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+      - "9229:9229" # The new debug port we need to expose
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app
+      - /app/node_modules
+    command: "npx nodemon --inspect=0.0.0.0:9229 --signal SIGINT -L --nolazy ./server.js"
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+volumes:
+  data:
+  logs:
