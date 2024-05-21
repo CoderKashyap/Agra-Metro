@@ -96,7 +96,7 @@ const Navbar = () => {
             </NavLink>
             <div className="lg:hidden flex items-center gap-x-4">
               <div
-              className="hover:cursor-pointer text-amber-500"
+              className="hover:cursor-pointer text-amber-400"
               onClick={() => setOpenNotification(true)}
             >
               <CircleNotificationsIcon fontSize='large' />
@@ -143,8 +143,7 @@ const Navbar = () => {
           </div>
 
           <div className="lg:flex items-center gap-x-6 hidden relative">
-            <div
-              className="hover:cursor-pointer text-yellow-400"
+            <div className="hover:cursor-pointer text-amber-400"
               onClick={() => setOpenNotification(true)}
             >
               <CircleNotificationsIcon fontSize='large' />
