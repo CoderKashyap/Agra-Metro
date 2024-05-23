@@ -9,6 +9,17 @@ interface NotificationProps {
   notificationDot?: any;
 }
 
+const notificationArray = [
+  {
+    date: "22/05/2024",
+    noti: "Agra metro rail services on election day start from 04:00 AM."
+  },
+  {
+    date: "22/05/2024",
+    noti: "Train movement b/w Samaypur Badli & Jahangir Puri on Yellow line shall be done via single line from 10 PM till end of revenue services and from start of revenue services till 7 AM w.e.f Thursday (18.4.2024) for a period of 04 months for execution of Phase IV work of Magenta Line extn."
+  },
+]
+
 const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
   // const navigate = useNavigate();
 
@@ -81,7 +92,7 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
 
             <div className="flex justify-around items-center">
 
-              <span className="cursor-pointer flex rounded-full text-white bg-amber-400"
+              <span className="cursor-pointer flex rounded-full text-white bg-amber-400 hover:bg-amber-500"
                 onClick={() => setOpen(false)}
               >
                 <NavigateNextIcon fontSize="medium" />
@@ -95,155 +106,36 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
 
 
             <ul className="px-3 flex flex-col overflow-y-auto h-full">
-              <li
-                className={`transition-all duration-200 ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 px-2 py-3 my-2`}
-              >
-                <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
-                  <div
-                    className={`text-yellow-500 transition-all duration-200 ease-in-out`}
-                  >
-                    <NotificationsActiveIcon fontSize="medium" />
+
+              {notificationArray && notificationArray.map((notification, i) => (
+                <li key={i} className={`transition-all duration-200 ease-in-out border border-yellow-300 bg-[#fefff3] rounded-lg group flex items-start justify-between gap-x-2 px-2 py-3 my-2`}>
+                  <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
+                    <div className="text-yellow-400 transition-all duration-200 ease-in-out">
+                      <NotificationsActiveIcon fontSize="medium" />
+                    </div>
+                    <div className="text-black text-sm w-full cursor-pointer px-1">
+                      <p className="font-medium text-gray-400 hover:text-gray-500 text-xs">{notification.date}</p>
+                      <p className={`text-gray-600 hover:text-orange-400 w-full my-1 leading-5 boNTXX`}>
+                        {notification.noti}
+                      </p>
+
+                      {notification.noti.length >= 80 &&
+                        <div className="text-xs flex justify-end items-center">
+                          <button className="text-gray-500 hover:text-gray-600 font-normal">Read More</button>
+                        </div>}
+
+                    </div>
                   </div>
-                  <div className="group hover:cursor-pointer text-black text-sm w-full">
-                    <p className="font-semibold text-gray-600">notification title</p>
-                    <p className={`text-gray-500 group-hover:text-amber-400 w-full`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni deleniti nobis quae, aspernatur possimus veniam
-                      repellendus quo rem facere quam?``
-                    </p>
-                    <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-400 font-semibold">
-                      Read More
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li
-                className={`transition-all duration-200  ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2`}
-              >
-                <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
-                  <div
-                    className={`text-yellow-500 transition-all duration-200 ease-in-out`}
-                  >
-                    <NotificationsActiveIcon fontSize="medium" />
-                  </div>
-                  <div className="group hover:cursor-pointer text-black text-sm w-full">
-                    <p className="font-semibold text-gray-600">notification title</p>
-                    <p className={`text-gray-500 group-hover:text-amber-400 w-full`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni deleniti nobis quae, aspernatur possimus veniam
-                      repellendus quo rem facere quam?``
-                    </p>
-                    <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-400 font-semibold">
-                      Read More
-                    </p>
-                  </div>
-                  {/* <button className="min-w-fit text-xs self-end text-gray-600 font-semibold">
-                        Read More...
-                      </button> */}
-                </div>
-              </li>
-              <li
-                className={`transition-all duration-200  ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2`}
-              >
-                <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
-                  <div
-                    className={`text-yellow-500 transition-all duration-200 ease-in-out`}
-                  >
-                    <NotificationsActiveIcon fontSize="medium" />
-                  </div>
-                  <div className="group hover:cursor-pointer text-black text-sm w-full">
-                    <p className="font-semibold text-gray-600">notification title</p>
-                    <p className={`text-gray-500 group-hover:text-amber-400 w-full`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni deleniti nobis quae, aspernatur possimus veniam
-                      repellendus quo rem facere quam?``
-                    </p>
-                    <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-600 font-semibold">
-                      Read More
-                    </p>
-                  </div>
-                  {/* <button className="min-w-fit text-xs self-end text-gray-600 font-semibold">
-                        Read More...
-                      </button> */}
-                </div>
-              </li>
-              <li
-                className={`transition-all duration-200 ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 px-2 py-3 my-2`}
-              >
-                <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
-                  <div
-                    className={`text-yellow-500 transition-all duration-200 ease-in-out`}
-                  >
-                    <NotificationsActiveIcon fontSize="medium" />
-                  </div>
-                  <div className="group hover:cursor-pointer text-black text-sm w-full">
-                    <p className="font-semibold text-gray-600">notification title</p>
-                    <p className={`text-gray-500 group-hover:text-amber-400 w-full`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni deleniti nobis quae, aspernatur possimus veniam
-                      repellendus quo rem facere quam?``
-                    </p>
-                    <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-400 font-semibold">
-                      Read More
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li
-                className={`transition-all duration-200  ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2`}
-              >
-                <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
-                  <div
-                    className={`text-yellow-500 transition-all duration-200 ease-in-out`}
-                  >
-                    <NotificationsActiveIcon fontSize="medium" />
-                  </div>
-                  <div className="group hover:cursor-pointer text-black text-sm w-full">
-                    <p className="font-semibold text-gray-600">notification title</p>
-                    <p className={`text-gray-500 group-hover:text-amber-400 w-full`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni deleniti nobis quae, aspernatur possimus veniam
-                      repellendus quo rem facere quam?``
-                    </p>
-                    <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-400 font-semibold">
-                      Read More
-                    </p>
-                  </div>
-                  {/* <button className="min-w-fit text-xs self-end text-gray-600 font-semibold">
-                        Read More...
-                      </button> */}
-                </div>
-              </li>
-              <li
-                className={`transition-all duration-200  ease-in-out border border-yellow-300 bg-yellow-50 rounded-lg group flex items-start justify-between gap-x-2 text-gray-400 px-2 py-3 my-2`}
-              >
-                <div className="px-1 flex items-start justify-stretch gap-x-2 w-full">
-                  <div
-                    className={`text-yellow-500 transition-all duration-200 ease-in-out`}
-                  >
-                    <NotificationsActiveIcon fontSize="medium" />
-                  </div>
-                  <div className="group hover:cursor-pointer text-black text-sm w-full">
-                    <p className="font-semibold text-gray-600">notification title</p>
-                    <p className={`text-gray-500 group-hover:text-amber-400 w-full`}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni deleniti nobis quae, aspernatur possimus veniam
-                      repellendus quo rem facere quam?``
-                    </p>
-                    <p className="min-w-fit text-xs self-end text-gray-600 group-hover:text-amber-600 font-semibold">
-                      Read More
-                    </p>
-                  </div>
-                  {/* <button className="min-w-fit text-xs self-end text-gray-600 font-semibold">
-                        Read More...
-                      </button> */}
-                </div>
-              </li>
+                </li>
+              ))}
+
+
+
             </ul>
 
             <div className="flex justify-center items-center">
-              <button className="transition-all duration-150 ease-linear m-3 text-white bg-amber-400 rounded-2xl py-1 px-4 font-semibold">
-                View all
+              <button onClick={() => setOpen(false)} className="transition-all duration-150 ease-linear m-3 text-white bg-amber-400 hover:bg-amber-500 rounded-2xl py-1 px-4 font-semibold">
+                Close
               </button>
             </div>
 
@@ -254,7 +146,7 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
         </div>
 
 
-      </div>
+      </div >
     </>
   );
 };

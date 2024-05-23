@@ -9,7 +9,7 @@ export default function NumericCounterInfo() {
             <div className="antialiased">
 
                 <main className="flex flex-col justify-center overflow-hidden">
-                    <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-14">
+                    <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-8">
 
 
                         <section className="font-quando grid gap-12 md:grid-cols-3 md:gap-10">
