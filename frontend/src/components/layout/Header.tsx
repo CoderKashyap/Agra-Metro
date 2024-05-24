@@ -88,7 +88,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="shadow-md sticky z-20 bg-white top-0 left-0">
+      <header className="shadow-md sticky z-10 bg-white top-0 left-0">
         <div className="mx-auto py-2 px-4 lg:flex md:items-center md:justify-between lg:mx-10">
           <div className="flex items-center justify-between">
             <NavLink to="/">
@@ -96,11 +96,14 @@ const Navbar = () => {
             </NavLink>
             <div className="lg:hidden flex items-center gap-x-4">
               <div
-              className="hover:cursor-pointer text-amber-400 hover:bg-amber-500"
-              onClick={() => setOpenNotification(true)}
-            >
-              <CircleNotificationsIcon fontSize='large' />
-            </div>
+                className="hover:cursor-pointer text-amber-400 hover:bg-amber-500" onClick={() => setOpenNotification(true)}>
+                <span className="absolute flex h-3 w-3 ml-6">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                </span>
+
+                <CircleNotificationsIcon fontSize='large' />
+              </div>
               <button
                 onClick={toggleNav}
                 className="block shadow-md lg:hidden border border-gray-600 p-2 rounded-xl text-gray-600 bg-white"
@@ -143,10 +146,16 @@ const Navbar = () => {
           </div>
 
           <div className="lg:flex items-center gap-x-6 hidden relative">
-            <div className="hover:cursor-pointer text-amber-400 hover:text-amber-500"
-              onClick={() => setOpenNotification(true)}
-            >
+
+            <div className="hover:cursor-pointer text-amber-400 hover:text-amber-500" onClick={() => setOpenNotification(true)}>
+
+              <span className="absolute flex h-3 w-3 ml-6">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+              </span>
+
               <CircleNotificationsIcon fontSize='large' />
+
             </div>
 
             {/* Search bar */}
@@ -169,8 +178,7 @@ const Navbar = () => {
       </header>
 
       {/* Phone view  */}
-      <div className={`${
-          openNav ? "block" : "hidden"
+      <div className={`${openNav ? "block" : "hidden"
         } backdrop-blur-lg bg-black bg-opacity-50 p-6 gap-6 flex flex-col justify-center items-end z-10 lg:hidden h-screen w-full absolut fixed top-0 left-0 right-0 bottom-0`}
       >
         <div className="w-full flex justify-center items-center mb-5">
@@ -222,7 +230,7 @@ const Navbar = () => {
         </button>
       </div>
       {/* {openNotification ? ( */}
-        <Notification open={openNotification} setOpen={setOpenNotification} />
+      <Notification open={openNotification} setOpen={setOpenNotification} />
       {/* ) : null} */}
       {/* <div className="text-white bg-yellow-500 p-2 rounded-full absolute z-20 bottom-0 md:bottom-24 right-4 animate-bounce hover:cursor-pointer" onClick={()=>setOpenNotification(true)}>
         <NotificationsActiveIcon fontSize="large" />

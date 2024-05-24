@@ -1,4 +1,4 @@
-// import Drawer from "@mui/material/Drawer";
+import { useState } from 'react'
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import "./Notification.css";
@@ -21,12 +21,12 @@ const notificationArray = [
 ]
 
 const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
+  const [notiExpandSwitch, setNotiExpandSwitch] = useState<boolean>(false);
   // const navigate = useNavigate();
 
   // const [selectType, setNotifyType] = useState<string>("general");
   // const [filteredNotify, setFilteredNotify] = useState<any[]>([]);
   // const [interactedMap, setInteractedMap] = useState<any>({});
-  // const [showSpecificDot, setSpecificDot] = useState<boolean>(false);
   // const [singleNotificationData, setSingleNotificationData] = useState<any>({});
 
   // const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -115,13 +115,13 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
                     </div>
                     <div className="text-black text-sm w-full cursor-pointer px-1">
                       <p className="font-medium text-gray-400 hover:text-gray-500 text-xs">{notification.date}</p>
-                      <p className={`text-gray-600 hover:text-orange-400 w-full my-1 leading-5 boNTXX`}>
+                      <p className={`text-gray-600 hover:text-orange-400 w-full my-1 leading-5 ${!notiExpandSwitch && "boNTXX"}`}>
                         {notification.noti}
                       </p>
 
                       {notification.noti.length >= 80 &&
-                        <div className="text-xs flex justify-end items-center">
-                          <button className="text-gray-500 hover:text-gray-600 font-normal">Read More</button>
+                        <div onClick={()=> setNotiExpandSwitch(!notiExpandSwitch)} className="text-xs flex justify-end items-center">
+                          <button className="text-gray-500 hover:text-gray-600 font-normal">{notiExpandSwitch ? "Read Less" : "Read More"}</button>
                         </div>}
 
                     </div>
