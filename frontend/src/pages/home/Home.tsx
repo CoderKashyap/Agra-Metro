@@ -7,6 +7,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import groptoBanner1 from "/promotionBanner/groptoBanner.jpg";
 // import groptoBanner2 from "/promotionBanner/Holibanner.webp";
 import TourGuide from "../../components/home/TourGuide";
+import LatestBlogs from "../../components/home/LatestBlogs";
 
 const Home = () => {
   return (
@@ -66,6 +67,8 @@ const Home = () => {
             <NumericCounterInfo />
 
             <TourGuide />
+
+            <LatestBlogs />
           </div>
         </div>
       </section>
