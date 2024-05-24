@@ -4,8 +4,8 @@ import PlanYourJourneyCol from "../../components/home/PlanYourJourneyCol";
 import KnowYourLocationCol from "../../components/home/KnowYourLocationCol";
 import NumericCounterInfo from "../../components/home/NumericCounterInfo";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import groptoBanner1 from "/promotionBanner/groptoBanner.jpg";
-// import groptoBanner2 from "/promotionBanner/Holibanner.webp";
+// import groptoBanner1 from "/promotionBanner/groptoBanner.jpg";
+import groptoBanner1 from "/promotionBanner/Holibanner.webp";
 import TourGuide from "../../components/home/TourGuide";
 import LatestBlogs from "../../components/home/LatestBlogs";
 
@@ -30,36 +30,37 @@ const Home = () => {
               <KnowYourLocationCol />
 
               {/* Promotion colomn 3 */}
-              <div className="rounded-lg md:p-4 p-1 bg-red-10 borde border-red-30 flex flex-col items-center justify-between md:gap-y-4 gap-y-6">
+              <div className="rounded-lg md:p-4 p-2 bg-red-10 border border-[pink]-300 bg-pink-100 flex flex-col items-center justify-between gap-y-4">
                 
-                <div className="px-4 py-2 bg-gray-100 w-full rounded-lg">
-                  <h3 className="font-semibold text-gray-600">Live Update</h3>
-                  <div className="flex flex-wrap gap-x-2 items-center justify-start">
+                <div className="px-5 py-2 bg-white text-black w-full rounded-lg">
+                  <h3 className="font-medium">Live Update</h3>
+
+                  <div className="flex flex-wrap p-1 gap-x-4 items-center justify-start">
                     <p className="flex gap-1 items-center min-w-fit text-sm">
                       <span className="animate-pulse text-green-500">
                         <FiberManualRecordIcon fontSize="small" />
                       </span>
-                      <span>Active Users: 4k</span>
+                      <span>Active Users: <span className="">1,200</span></span>
                     </p>
                     
                     <p className="flex gap-1 items-center min-w-fit text-sm">
-                      <span className="text-green-500">
+                      <span className="text-cyan-500">
                         <FiberManualRecordIcon fontSize="small" />
                       </span>
-                      <span>Monthly Users: 4,000</span>
+                      <span>Monthly Users: <span className="">4,000</span></span>
                     </p>
                   </div>
+
                 </div>
 
+               
                 <div className="">
                   <img src={groptoBanner1} className="rounded-lg" alt="" />
                 </div>
-
-
-                <div className="">
+               
+                {/* <div className="">
                   <img src={groptoBanner1} className="rounded-lg" alt="" />
-                </div>
-
+                </div> */}
 
               </div>
             </div>
