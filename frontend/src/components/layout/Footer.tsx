@@ -11,17 +11,17 @@ const Footer = () => {
       <footer className=" bg-gray-100">
         <div className="mx-auto md:mx-6 xl:mx-10 px-4 md:py-4">
           <div className="flex flex-col items-stretch justify-center md:flex-row md:items-start md:justify-around md:gap-y-4">
-            <div className="  md:w-[30%] self-center md:self-auto">
+            <div className="md:w-[30%] self-center md:self-auto">
               <div className="mt-4 md:my-0">
-                <img src={Logo} alt="delhimetrorail" className="h-14 lg:h-16" />
+                <img src={Logo} alt="delhimetrorail" className="h-16" />
               </div>
             </div>
-            <div className="w-full md:w-[70%] ">
+            <div className="w-full md:w-[70%]">
               <div className="px-4">
                 <h3 className="text-gray-700 text-center my-4 md:my-0 text-xl font-bold  md:text-left">
                   Quick Links
                 </h3>
-                <ul className=" mx-auto w-fit md:w-full text-sm columns-2 gap-x-6 md:gap-x-0 gap-y-2 md:flex md:flex-wrap md:flex-row md:items-center justify-start md:divide-x-2 divide-gray-500 my-4">
+                <ul className="mx-auto w-fit md:w-full text-sm columns-2 gap-x-6 md:gap-x-0 gap-y-2 md:flex md:flex-wrap md:flex-row md:items-center justify-start md:divide-x-2 divide-gray-500 my-4">
                   <li className="py-1 md:py-0 leading-4 md:pr-2 hover:text-red-700">
                     <a href="/miscellaneous">Miscellaneous</a>
                   </li>
@@ -48,7 +48,7 @@ const Footer = () => {
                 </ul>
               </div>
               <hr className="mx-4 border-0.5 border-gray-300" />
-              <div className="px-4 flex items-center flex-col-reverse md:flex-row md:items-start justify-between gap-x-4 my-4 w-full">
+              <div className="px-4 flex items-center flex-col-reverse md:flex-row md:items-start justify-between gap-y-4 gap-x-4 my-4 w-full ">
                 {/* <div className="basis-[35%] grid grid-cols-2 w-full text-sm">
                   <div className="col-span-1 px-4 ">
                     <h3 className="font-bold text-base">Links</h3>
@@ -67,7 +67,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div> */}
-                <div className="w-full my-2 md:m-0">
+                <div className="w-full md:m-0">
                   <ul className="flex items-center justify-center md:justify-start gap-x-4">
                     <li className="w-fit flex justify-center">
                       <img
@@ -89,8 +89,8 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="my-2 md:m-0 w-full ">
-                  <ul className="flex items-center justify-center md:justify-end gap-x-2 lg:gap-x-4">
+                <div className="md:m-0 w-full">
+                  <ul className="flex items-center justify-center md:justify-end gap-x-4">
                     <li
                       title="Facebook Page"
                       className="transition-all duration-200 ease-in-out delay-75 hover:cursor-pointer text-gray-700 hover:text-[#3B5998]"
