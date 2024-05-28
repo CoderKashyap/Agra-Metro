@@ -32,7 +32,7 @@ export default function LatestBlogs() {
                             </div>
 
                             <div className='flex flex-col gap-1 mr-2 my-3'>
-                                <h5 className="boNTXXBlogSection text-sm font-medium tracking-tight text-gray-600 dark:text-white">Note worthy techno dfg jifgh logy acquisitions 2021</h5>
+                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Note worthy techno dfg jifgh logy acquisitions 2021</h5>
 
                                 <div>
                                     <p className="text-xs text-gray-500 dark:text-gray-400">Agra Metro</p>
