@@ -304,7 +304,7 @@ const PlanYourJourneyCol = () => {
               {/* To station dropdown  */}
               {showToStation && (
                 <div
-                  className={`p-0 border border-gray-300 absolute w-full z-20 rounded-b-lg bg-[#fffef7] overflow-y-auto h-auto max-h-68`}
+                  className={`p-0 border border-gray-300 absolute w-full z-10 rounded-b-lg bg-[#fffef7] overflow-y-auto h-auto max-h-68`}
                 >
                   {toStationObjRemake &&
                     toStationObjRemake.map(
@@ -353,7 +353,7 @@ const PlanYourJourneyCol = () => {
               )}
             </div>
 
-            <div className="mt-10 z-50 flex justify-between items-center">
+            <div className="mt-10 flex justify-between items-center">
               <button
                 onClick={() => resetPlanJourneyForm()}
                 className="font-medium text-gray-700 text-sm underline"

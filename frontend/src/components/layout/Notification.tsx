@@ -79,7 +79,7 @@ const Notification: React.FC<NotificationProps> = ({ open, setOpen }) => {
     <>
       <div
         className={`${open ? "fixed" : "hidden"
-          } inset-0 backdrop-blur-sm bg-black bg-opacity-50 z-20`}
+          } inset-0 backdrop-blur-sm bg-black bg-opacity-50 z-30`}
         onClick={() => setOpen(false)}
       >
 

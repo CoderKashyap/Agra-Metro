@@ -1,49 +1,99 @@
 
-import banner1 from "/promotionBanner/Holibanner.webp";
+import { useEffect } from 'react';
 
-// import second from '/promotionBanner/Holibanner.webp'
+// Utility function to inject keyframes
+const injectKeyframes = (keyframes: string[], className: string) => {
+  const styleSheet = document.createElement('style');
+  const keyframesString = `
+    @keyframes ${className} {
+      ${keyframes.map((frame, index) => `
+        ${index * 20}% {
+          background-image: url('${frame}');
+        }
+      `).join('')}
+    }
+  `;
+  styleSheet.appendChild(document.createTextNode(keyframesString));
+  document.head.appendChild(styleSheet);
+};
+
+
 
 export default function TourGuide() {
 
-    const bannerData = [
-        {
-            image: banner1,
-            heading: "Famous Attractions",
-            description: "Agra’s Must-Visit Architectural Gems"
-        },
-        {
-            image: banner1,
-            heading: "Hotel, Restro & cafes",
-            description: "Agra’s Best Dine, Play, Enjoy & Stay."
-        },
-        {
-            image: banner1,
-            heading: "Famous Markets",
-            description: "The Pulse of Agra's Streets."
-        },
-        {
-            image: banner1,
-            heading: "Enjoy & Entertain",
-            description: "Malls, Cinema, & Adventure in Agra."
-        }
-    ]
+  const tourGuideData = [
+    {
+      images: [
+        "/tourGuide/Fatehpur-Sikri.jpg",
+        "/tourGuide/etma-ud-Daulah.jpg",
+        "/tourGuide/akbar-tomb-sikandra.jpg",
+        "/tourGuide/redfort.jpg",
+        "/tourGuide/tajMahal.webp",
+      ],
+      heading: "Famous Attractions",
+      description: "Agra’s Must-Visit Architectural Gems"
+    },
+    {
+      images: [        
+        "/tourGuide/downTownCafe.webp",
+        "/tourGuide/saltCafe.jpg",
+        // "/tourGuide/oberoiAmarvilas.webp",
+        "/tourGuide/itcMughal.jpg",
+        "/tourGuide/oberoiAmarvilas1.jpg",
+        "/tourGuide/moleculeCafe.webp",
+      ],
+      heading: "Hotel, Restro & cafes",
+      description: "Agra’s Best Dine, Play, Enjoy & Stay."
+    },
+    {
+      images: [
+        "/tourGuide/Jewlery-Shopping-Agra.jpg",
+        "/tourGuide/shahganj-market.jpg",
+        // "/tourGuide/sadarBazar.jpg",
+        "/tourGuide/sadarBazar1.jpg",
+        "/tourGuide/Kinari-Bazaar-1.jpg",
+        "/tourGuide/shoppingAgra.jpg",
+      ],
+      heading: "Famous Markets",
+      description: "The Pulse of Agra's Streets."
+    },
+    {
+      images: [
+        "/tourGuide/tajMahal.webp",
+        "/tourGuide/Fatehpur-Sikri.jpg",
+        "/tourGuide/etma-ud-Daulah.jpg",
+        "/tourGuide/akbar-tomb-sikandra.jpg",
+        "/tourGuide/redfort.jpg"
+      ],
+      heading: "Enjoy & Entertain",
+      description: "Malls, Cinema, & Adventure in Agra."
+    }
+  ]
 
 
-    return (
-        <>
 
-            <section className="xl:px-18 px-3">
+  useEffect(() => {
+    tourGuideData.forEach((tgData, i)=>{
+      injectKeyframes(tgData?.images, `animate${i}`);
+    })
+  }, []);
 
-                <div className="font-quando lg:p-4 text-center p-2 text-gray-600 font-bold lg:text-3xl text-3xl">Tour Guide</div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 cursor-pointer items-center justify-items-center gap-6 py-6 px-3 md:px-1 w-full">
-                    {bannerData.map((data, i) => (
-                        <div key={i} className="group border border-gray-300 hover:shadow-md rounded-2xl p-4 md:p-4 flex justify-center items-center flex-col w-full h-full xl:w-full transition-all duration-100 ease-in-out">
-                            
-                            <div className="tGfAImgCarousel rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out object-contain">
+  return (
+    <>
 
-                            </div>
-                            {/* <img
+      <section className="xl:px-18 px-3">
+
+        <div className="font-quando lg:p-4 text-center p-2 text-gray-600 font-bold lg:text-3xl text-3xl">Tour Guide</div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 cursor-pointer items-center justify-items-center gap-6 py-6 px-3 md:px-1 w-full">
+          {tourGuideData && tourGuideData.map((data, i) => (
+            <div key={i} className="group border border-gray-300 hover:shadow-md rounded-2xl p-4 md:p-4 flex justify-center items-center flex-col w-full h-full xl:w-full transition-all duration-100 ease-in-out">
+
+              <div className="h-40 w-72 bg-cover bg-center bg-no-repeat          rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out object-contain" style={{ animation: `animate${i} 30s ease-in-out infinite alternate-reverse forwards` }} >
+
+              </div>
+              {/* <img 
                                 height="300"
                                 width="300"
                                 className="group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out object-contain"
@@ -52,18 +102,18 @@ export default function TourGuide() {
                                 srcSet=""
                             /> */}
 
-                            <h1 className="font-quando text-gray-600 group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out text-md sm:text-lg font-semibold mt-3">
-                                {data.heading}
-                            </h1>
-                            <p className="text-xs text-center text-gray-500">
-                                {data.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+              <h1 className="font-quando text-gray-600 group-hover:scale-100 group-hover:-translate-y-2 transition-all duration-175 ease-in-out text-md sm:text-lg font-semibold mt-3">
+                {data.heading}
+              </h1>
+              <p className="text-xs text-center text-gray-500">
+                {data.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
 
 
-        </>)
+    </>)
 }

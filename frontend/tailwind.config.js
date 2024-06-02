@@ -11,6 +11,7 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       opacity: ['group-hover'],
+
     },
   },
   plugins: [],

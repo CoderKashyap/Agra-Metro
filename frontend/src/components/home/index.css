@@ -45,14 +45,12 @@
 .tGfAImgCarousel {
     height: 10rem;
     width: 18rem;
-    /* border-radius: ; */
-    /* background-image: url("/tourGuide/taj-mahal.webp"); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: 5s;
 
-    animation-name: animate;
+    animation-name: animateFamousAttractionKeyframes;
     animation-direction: alternate-reverse;
     animation-play-state: running;
     animation-timing-function: ease-in-out;
@@ -61,7 +59,7 @@
     animation-iteration-count: infinite;
 }
 
-@keyframes animate {
+@keyframes animateFamousAttractionKeyframes {
     0% {
         background-image: url("/tourGuide/tajMahal.webp");
     }

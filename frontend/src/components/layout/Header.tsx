@@ -88,7 +88,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="shadow-md sticky z-50 bg-white top-0 left-0">
+      <header className="shadow-md sticky z-20 bg-white top-0 left-0">
         <div className="mx-auto py-2 px-4 lg:flex md:items-center md:justify-between lg:mx-10">
           <div className="flex items-center justify-between">
             <NavLink to="/">

@@ -8,7 +8,7 @@ import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LogoutIcon from "@mui/icons-material/Logout";
 import TrainIcon from "@mui/icons-material/Train";
-import NearbyCard from "../../components/Station Page/NearbyCard";
+import NearbyCard from "../../components/stationPage/NearbyCard";
 
 const StationData = {
   station_name: "Taj East Gate",
@@ -231,7 +231,7 @@ const StationDetails = () => {
           </section>
         </div>
         <div className="col-span-6 lg:col-span-4 -order-1 lg:order-2">
-          <div className="static md:sticky top-24 z-20">
+          <div className="static md:sticky top-24">
             <PlanYourJourneyCol />
           </div>
         </div>
