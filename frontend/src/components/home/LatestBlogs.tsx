@@ -1,6 +1,10 @@
 
 import agraMetroGolLogo from '/metroLogoGol.png'
-import second from '/sunset.jpg'
+import AgraMetroKeyDetailsUpdates from '/blogsImg/Agra Metro Key details & updates.webp'
+import expertFirstTimeVisitors from '/blogsImg/expert tip for firstTime visitors.jpg'
+import agraTourism from '/blogsImg/agraTourism.jpg'
+import vrindavanMathura from '/blogsImg/vrindavanMathura.jpg'
+
 import "./index.css"
 
 
@@ -22,7 +26,7 @@ export default function LatestBlogs() {
 
                     <div className="max-w-sm hover:shadow-md bg-white border border-gray-200 hover:border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                        <img className="rounded-t-lg" src={second} alt="Blog thumbnail" />
+                        <img className="rounded-t-lg h-44 w-full" src={AgraMetroKeyDetailsUpdates} alt="Blog thumbnail" />
 
                         {/* Half  */}
                         <div className="flex flex-row ">
@@ -32,14 +36,14 @@ export default function LatestBlogs() {
                             </div>
 
                             <div className='flex flex-col gap-1 mr-2 my-3'>
-                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Note worthy techno dfg jifgh logy acquisitions 2021</h5>
+                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Agra Metro: Key details & Updates.</h5>
 
                                 <div>
                                     <p className="text-xs text-gray-500 dark:text-gray-400">Agra Metro</p>
                                 </div>
 
                                 <div className='flex justify-between items-center'>
-                                    <p className="text-xs text-gray-500 dark:text-gray-400">11/01/2000</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">16/06/2014</p>
 
                                     <a className="inline-flex justify-center items-center px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         Read more
@@ -52,27 +56,28 @@ export default function LatestBlogs() {
 
                         </div>
                     </div>
+
 
                     <div className="max-w-sm hover:shadow-md bg-white border border-gray-200 hover:border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                        <img className="rounded-t-lg" src={second} alt="Blog thumbnail" />
+                        <img className="rounded-t-lg h-44 w-full" src={expertFirstTimeVisitors} alt="Blog thumbnail" />
 
                         {/* Half  */}
                         <div className="flex flex-row ">
 
                             <div className='m-2'>
-                                <img className="rounded-full h- w-12" src={agraMetroGolLogo} alt="" />
+                                <img className="rounded-full w-12" src={agraMetroGolLogo} alt="" />
                             </div>
 
                             <div className='flex flex-col gap-1 mr-2 my-3'>
-                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Note worthy techno dfg jifgh logy acquisitions 2021</h5>
+                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Exploring Agra: Expert Tips for First-Time Visitors</h5>
 
                                 <div>
                                     <p className="text-xs text-gray-500 dark:text-gray-400">Agra Metro</p>
                                 </div>
 
                                 <div className='flex justify-between items-center'>
-                                    <p className="text-xs text-gray-500 dark:text-gray-400">11/01/2000</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">26/06/2024</p>
 
                                     <a className="inline-flex justify-center items-center px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         Read more
@@ -85,27 +90,28 @@ export default function LatestBlogs() {
 
                         </div>
                     </div>
+
 
                     <div className="max-w-sm hover:shadow-md bg-white border border-gray-200 hover:border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                        <img className="rounded-t-lg" src={second} alt="Blog thumbnail" />
+                        <img className="rounded-t-lg h-44 w-full" src={agraTourism} alt="Blog thumbnail" />
 
                         {/* Half  */}
-                        <div className="flex flex-row ">
+                        <div className="flex flex-row">
 
                             <div className='m-2'>
                                 <img className="rounded-full h- w-12" src={agraMetroGolLogo} alt="" />
                             </div>
 
                             <div className='flex flex-col gap-1 mr-2 my-3'>
-                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Note worthy techno dfg jifgh logy acquisitions 2021</h5>
+                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Agra Tourism: Complete Travel Tips and Insider Secrets</h5>
 
                                 <div>
                                     <p className="text-xs text-gray-500 dark:text-gray-400">Agra Metro</p>
                                 </div>
 
                                 <div className='flex justify-between items-center'>
-                                    <p className="text-xs text-gray-500 dark:text-gray-400">11/01/2000</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">6/07/2024</p>
 
                                     <a className="inline-flex justify-center items-center px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         Read more
@@ -118,10 +124,11 @@ export default function LatestBlogs() {
 
                         </div>
                     </div>
+
 
                     <div className="max-w-sm hover:shadow-md bg-white border border-gray-200 hover:border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                        <img className="rounded-t-lg" src={second} alt="Blog thumbnail" />
+                        <img className="rounded-t-lg h-44 w-full" src={vrindavanMathura} alt="Blog thumbnail" />
 
                         {/* Half  */}
                         <div className="flex flex-row ">
@@ -131,14 +138,14 @@ export default function LatestBlogs() {
                             </div>
 
                             <div className='flex flex-col gap-1 mr-2 my-3'>
-                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Note worthy techno dfg jifgh logy acquisitions 2021</h5>
+                                <h5 className="boNTXXBlogSection text-sm font-semibold tracking-tight text-gray-600 dark:text-white">Mathura-Vrindavan travel guide for First-Time Visitors</h5>
 
                                 <div>
                                     <p className="text-xs text-gray-500 dark:text-gray-400">Agra Metro</p>
                                 </div>
 
                                 <div className='flex justify-between items-center'>
-                                    <p className="text-xs text-gray-500 dark:text-gray-400">11/01/2000</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">16/07/2024</p>
 
                                     <a className="inline-flex justify-center items-center px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         Read more
@@ -151,7 +158,6 @@ export default function LatestBlogs() {
 
                         </div>
                     </div>
-
 
 
 

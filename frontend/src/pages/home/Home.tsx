@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <MetaData
-        title="Welcome to Agra Metro Rail | Agra Metro"
+        title="Agra Metro- Stations, Fare, Timings & Route map"
         description="Agra ghumo, Khao pio aish kro."
         keywords="Agra Metro"
         image={undefined}

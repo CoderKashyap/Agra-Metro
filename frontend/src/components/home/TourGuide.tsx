@@ -59,11 +59,11 @@ export default function TourGuide() {
     },
     {
       images: [
-        "/tourGuide/tajMahal.webp",
-        "/tourGuide/Fatehpur-Sikri.jpg",
-        "/tourGuide/etma-ud-Daulah.jpg",
-        "/tourGuide/akbar-tomb-sikandra.jpg",
-        "/tourGuide/redfort.jpg"
+        "/tourGuide/escapeRooms.jpg",
+        "/tourGuide/trampoline.jpg",
+        "/tourGuide/cosmos-mall.jpg",
+        "/tourGuide/waterPark.jpg",
+        "/tourGuide/cinema.jpg",
       ],
       heading: "Enjoy & Entertain",
       description: "Malls, Cinema, & Adventure in Agra."
