@@ -1,7 +1,6 @@
 import React from "react";
 import PlanYourJourneyCol from "../../components/home/PlanYourJourneyCol";
 import Station_Logo from "/Station_logo-2.png";
-import Background from "/back.png";
 import WheelchairPickupIcon from "@mui/icons-material/WheelchairPickup";
 import EscalatorIcon from "@mui/icons-material/Escalator";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";

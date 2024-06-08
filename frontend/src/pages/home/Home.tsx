@@ -6,6 +6,8 @@ import NumericCounterInfo from "../../components/home/NumericCounterInfo";
 import LiveActiveSponsored from "../../components/home/LiveActive&sponsored";
 import TourGuide from "../../components/home/TourGuide";
 import LatestBlogs from "../../components/home/LatestBlogs";
+import WayOfTransportToAgra from "../../components/home/WayOfTransportToAgra";
+
 
 const Home = () => {
   return (
@@ -29,7 +31,7 @@ const Home = () => {
 
               {/* Live & sponsored colomn 3rd */}
               <LiveActiveSponsored />
-              
+
 
             </div>
 
@@ -38,6 +40,9 @@ const Home = () => {
             <TourGuide />
 
             <LatestBlogs />
+
+            <WayOfTransportToAgra />
+
           </div>
         </div>
       </section>

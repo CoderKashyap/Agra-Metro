@@ -3,7 +3,7 @@ import groptoBanner1 from "/promotionBanner/Holibanner.webp";
 
 const LiveActiveSponsored = () => {
     return (<>
-        <div className="rounded-lg md:p-4 p-2 bg-red-10 border border-[pink]-300 bg-pink-100 flex flex-col items-center justify-between gap-y-4">
+        <div className="rounded-lg md:p-4 p-2 bg-red-10 border border-pink-200 bg-pink-100 flex flex-col items-center justify-between gap-y-4">
 
             <div className="px-5 py-2 bg-white text-black w-full rounded-lg">
                 <h3 className="font-medium"> <span className="text-red-600">Live</span> Update</h3>

@@ -88,7 +88,7 @@ export default function TourGuide() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 cursor-pointer items-center justify-items-center gap-6 py-6 px-3 md:px-1 w-full">
           {tourGuideData && tourGuideData.map((data, i) => (
-            <div key={i} className="group border border-gray-300 hover:shadow-md rounded-2xl p-4 md:p-4 flex justify-center items-center flex-col w-full h-full xl:w-full transition-all duration-100 ease-in-out">
+            <div key={i} className="max-w-sm group border border-gray-300 hover:shadow-md rounded-2xl p-4 md:p-4 flex justify-center items-center flex-col w-full h-full xl:w-full transition-all duration-100 ease-in-out">
 
               <div className="h-40 w-72 bg-cover bg-center bg-no-repeat          rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out object-contain" style={{ animation: `animate${i} 30s ease-in-out infinite alternate-reverse forwards` }} >
 
