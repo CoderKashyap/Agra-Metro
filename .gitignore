@@ -18,3 +18,4 @@
 /frontend/.env.production.local
 
 npm-debug.log*
+.vercel
