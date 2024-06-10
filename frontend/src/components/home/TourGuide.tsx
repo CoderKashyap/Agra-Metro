@@ -1,21 +1,32 @@
 
 import { useEffect } from 'react';
 
-// Utility function to inject keyframes
+
+
 const injectKeyframes = (keyframes: string[], className: string) => {
   const styleSheet = document.createElement('style');
   const keyframesString = `
     @keyframes ${className} {
+      0% {
+        background-image: url('${keyframes[0]}');
+      }
       ${keyframes.map((frame, index) => `
-        ${index * 20}% {
+        ${(index / (keyframes.length - 1)) * 100}% {
           background-image: url('${frame}');
         }
       `).join('')}
+      100% {
+        background-image: url('${keyframes[0]}');
+      }
     }
   `;
   styleSheet.appendChild(document.createTextNode(keyframesString));
   document.head.appendChild(styleSheet);
 };
+
+
+
+
 
 
 
@@ -28,6 +39,7 @@ export default function TourGuide() {
         "/tourGuide/etma-ud-Daulah.jpg",
         "/tourGuide/akbar-tomb-sikandra.jpg",
         "/tourGuide/redfort.jpg",
+        "/tourGuide/tajMahal.webp",
         "/tourGuide/tajMahal.webp",
       ],
       heading: "Famous Attractions",
@@ -90,7 +102,7 @@ export default function TourGuide() {
           {tourGuideData && tourGuideData.map((data, i) => (
             <div key={i} className="max-w-sm group border border-gray-300 hover:shadow-md rounded-2xl p-4 md:p-4 flex justify-center items-center flex-col w-full h-full xl:w-full transition-all duration-100 ease-in-out">
 
-              <div className="h-40 w-72 bg-cover bg-center bg-no-repeat          rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out object-contain" style={{ animation: `animate${i} 30s ease-in-out infinite alternate-reverse forwards` }} >
+              <div className="h-40 w-72 bg-cover bg-center bg-no-repeat          rounded-2xl group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-175 ease-in-out object-contain" style={{ animation: `animate${i} 20s linear infinite forwards` }} >
 
               </div>
               {/* <img 
