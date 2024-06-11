@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        quando: ['Quando', 'sans-serif'],
-        lora: ['Lora', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        quando: ['Quando', 'sans-serif'],
+        // lora: ['Lora', 'sans-serif'],
+        // roboto: ['Roboto', 'sans-serif'],
+        // inter: ['Inter', 'sans-serif'],
       },
       opacity: ['group-hover'],
 
