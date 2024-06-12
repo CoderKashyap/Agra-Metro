@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import PlanYourJourneyCol from "../../components/home/PlanYourJourneyCol";
 import Station_Logo from "/Station_logo-2.png";
 import WheelchairPickupIcon from "@mui/icons-material/WheelchairPickup";
 import EscalatorIcon from "@mui/icons-material/Escalator";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LogoutIcon from "@mui/icons-material/Logout";
 import TrainIcon from "@mui/icons-material/Train";
-import NearbyCard from "../../components/Station Page/NearbyCard";
+import NearbyCard from "../../components/stationPage/NearbyCard";
 import { GrLocationPin } from "react-icons/gr";
+import ElevatorIcon from "@mui/icons-material/Elevator";
+import LocationOnSharpIcon from "@mui/icons-material/LocationOnSharp";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import WcIcon from "@mui/icons-material/Wc";
 
 const StationData = {
   station_name: "Taj East Gate",
@@ -27,16 +30,53 @@ const StationData = {
       icon: <LocalParkingIcon fontSize="small" />,
     },
   ],
+  LiftAndEsclators: [
+    {
+      type: "Escalator",
+      name: "Escalator No.1",
+      description: "Ground To Concourse",
+    },
+    {
+      type: "Escalator",
+      name: "Escalator No.2",
+      description: "Concourse To Platform",
+    },
+    {
+      type: "Escalator",
+      name: "Escalator No.3",
+      description: "Concourse To Platform",
+    },
+    {
+      type: "Lift",
+      name: "Lift No.1",
+      description: "Ground To Concourse",
+    },
+    {
+      type: "Lift",
+      name: "Lift No.2",
+      description: "Concourse To Platform",
+    },
+    {
+      type: "Lift",
+      name: "Lift No.3",
+      description: "Concourse To Platform",
+    },
+    {
+      type: "Lift",
+      name: "Lift No.4",
+      description: "Ground To Concourse",
+    },
+  ],
   gates: [
     {
       Gate_Number: "Gate No. 1",
       Gate_Side: "towards TDI Mall",
-      icon: <GrLocationPin size={24} />,
+      icon: <LocationOnSharpIcon fontSize="small" />,
     },
     {
       Gate_Number: "Gate No. 2",
       Gate_Side: "towards Basi",
-      icon: <GrLocationPin size={24} />,
+      icon: <LocationOnSharpIcon fontSize="small" />,
     },
   ],
   platforms: [
@@ -53,16 +93,34 @@ const StationData = {
   ],
   facilities: [
     {
-      Facility_Name: "Token Machine",
+      name: "Water Cooler",
+      location: "Concourse Paid Area",
     },
     {
-      Facility_Name: "Toilet",
+      name: "Toilet",
+      location: "Concourse Paid Area",
+    },
+  ],
+  NearbyPlaces: [
+    {
+      name: "TDI Mall",
+    },
+    {
+      name: "Taj Shilp Gram",
+    },
+    {
+      name: "Agra Chaupati",
+    },
+    {
+      name: "Taj Mahal East Gate",
     },
   ],
 };
 
 const StationDetails = () => {
   const [openPlanYourJourney, setOpenPlanYourJourney] = useState(false);
+
+  const { station } = useParams();
 
   return (
     <section className="flex flex-col items-center justify-center">
@@ -142,7 +200,7 @@ const StationDetails = () => {
           <div className="col-span-6 lg:col-span-8 order-1 lg:order-1 ">
             <section>
               <h2 className="text-lg font-bold uppercase text-black pb-2">
-                {StationData.station_name}
+                {station}
               </h2>
               {/* <img src={Tracks} className="w-full h-56" alt="" /> */}
               <hr />
@@ -184,18 +242,60 @@ const StationDetails = () => {
               <ul className="list-disc list-inside">
                 {StationData.gates.map((Gate) => {
                   return (
-                    <li className="flex flex-col py-1 text-sm">
+                    <li className="flex flex-col py-1 text-sm my-2">
                       <span className="text-gray-600">
                         <strong>{Gate.Gate_Number}</strong>
                       </span>
-                      <span className="flex items-center gap-x-2">
-                        <span className="text-gray-500"> {Gate.icon}</span>
-                        <span className="text-gray-500">{Gate.Gate_Side}</span>
+                      <span className="flex items-center gap-x-2 text-gray-500 mt-2">
+                        <span> {Gate.icon}</span>
+                        <span>{Gate.Gate_Side}</span>
                       </span>
                     </li>
                   );
                 })}
               </ul>
+            </section>
+            <hr />
+            <section className="py-8">
+              <h3 className="uppercase text-base font-bold text-red-700 pb-2">
+                Lifts & Esclators
+              </h3>
+              <div className="h-1 bg-red-700 w-[5%] mb-6"></div>
+
+              <div className="relative overflow-x-auto">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                  <thead className="text-xs text-gray-600 uppercase bg-gray-50">
+                    <tr>
+                      <th scope="col" className="px-6 py-3">
+                        Name
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        Desciption
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {StationData.LiftAndEsclators.map((data) => (
+                      <tr key={data.name} className="bg-white border-b ">
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap "
+                        >
+                          <span className="text-gray-500 mr-2">
+                            {data.type === "Escalator" ? (
+                              <EscalatorIcon fontSize="small" />
+                            ) : (
+                              <ElevatorIcon fontSize="small" />
+                            )}
+                          </span>
+                          <span>{data.name}</span>
+                        </th>
+                        <td className="px-6 py-4">{data.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </section>
             <hr />
             <section className="py-8">
@@ -213,7 +313,7 @@ const StationDetails = () => {
                           <strong>{platform.Platform_NUmber}</strong>
                         </span>
 
-                        <span className="flex items-center justify-center gap-x-2">
+                        <span className="flex items-center justify-center gap-x-2 mt-2">
                           <span className="text-gray-500">
                             <LogoutIcon fontSize="small" />
                           </span>
@@ -230,15 +330,52 @@ const StationDetails = () => {
             <hr />
             <section className="py-8">
               <h3 className="uppercase text-base font-bold text-red-700 pb-2">
+                Station Facilities
+              </h3>
+              <div className="h-1 bg-red-700 w-[5%] mb-6"></div>
+              <ul className="">
+                {StationData.facilities.map((facility) => {
+                  return (
+                    <li className="flex gap-x-2 py-1 text-sm my-2">
+                      <span className="text-gray-500">
+                        {facility.name === "Water Cooler" ? (
+                          <WaterDropIcon fontSize="small" />
+                        ) : (
+                          <WcIcon fontSize="small" />
+                        )}
+                      </span>
+                      <div className="flex flex-col">
+                        <span className="text-gray-600">
+                          <strong>{facility.name}</strong>
+                        </span>
+                        <ul className="list-disc list-inside mt-2 text-gray-600">
+                          <li>{facility.location}</li>
+                        </ul>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+            <hr />
+            <section className="py-8">
+              <h3 className="uppercase text-base font-bold text-red-700 pb-2">
                 Nearby places
               </h3>
               <div className="h-1 bg-red-700 w-[5%] mb-6"></div>
-              <NearbyCard />
+              <div className="flex items-center gap-4 flex-wrap">
+                {StationData.NearbyPlaces.map((data) => (
+                  <NearbyCard key={data.name} data={data} />
+                ))}
+              </div>
             </section>
           </div>
           <div className="col-span-6 lg:col-span-4 -order-1 lg:order-2">
-            <div className="static md:sticky top-24 z-20">
-              <PlanYourJourneyCol openPlanYourJourneyForm={openPlanYourJourney} setOpenPlanYourJourneyForm={setOpenPlanYourJourney} />
+            <div className="static md:sticky top-24 z-10">
+              <PlanYourJourneyCol
+                openPlanYourJourneyForm={openPlanYourJourney}
+                setOpenPlanYourJourneyForm={setOpenPlanYourJourney}
+              />
               {/* <PlanYourJourneyCol.Button setOpenForm={setOpenPlanYourJourney} /> */}
             </div>
           </div>

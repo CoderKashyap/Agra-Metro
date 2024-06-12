@@ -3,19 +3,19 @@ import Logo from "/sunset.jpg";
 import { RiPinDistanceLine } from "react-icons/ri";
 import { IoFootstepsSharp } from "react-icons/io5";
 
-const NearbyCard = () => {
+const NearbyCard = ({ data }) => {
   return (
     <div className="border overflow-hidden rounded-md w-fit group">
       <div className="w-fit overflow-hidden">
         <img
           src={Logo}
-          className="group-hover:cursor-pointer group-hover:scale-110 transition-all ease-in-out duration-200 delay-75 w-80 object-contain"
+          className="group-hover:cursor-pointer group-hover:scale-125 transition-all ease-in-out duration-500 w-80 object-cover"
           alt=""
         />
       </div>
       <div className="p-2">
-        <h3 className="my-2 text-base font-semibold text-gray-600">
-          Place Name
+        <h3 className="my-2 text-sm font-semibold text-gray-900">
+          {data.name}
         </h3>
         <hr />
         <div className="text-sm flex items-center justify-between my-1">
