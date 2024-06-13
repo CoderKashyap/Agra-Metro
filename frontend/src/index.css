@@ -3,39 +3,43 @@
 @tailwind utilities;
 
 @layer utilities {
-    .text-gradient {
-      background: linear-gradient(45deg, #FFD700, #FF4500);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+  .text-gradient {
+    background: linear-gradient(45deg, #ffd700, #ff4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
-  
-  
+}
+
+@layer base {
+  body {
+    font-family: popins, sans-serif;
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-family: quando ,sans-serif;
+  }
+}
+
 /* width */
 ::-webkit-scrollbar {
-    width: 14px;
+  width: 14px;
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #d2d2d2;
-    border-radius: 5px;
+  background: #d2d2d2;
+  border-radius: 5px;
 }
- 
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #b5b5b5;
+  background: #b5b5b5;
 }
-
-
-
-
 
 /* ::-webkit-scrollbar {
     width: 10px;

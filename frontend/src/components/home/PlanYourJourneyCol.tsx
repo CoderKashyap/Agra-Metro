@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import { MdPlayArrow } from "react-icons/md";
+import { useMediaQuery } from "@mui/material";
 
 const stations = [
   { stationName: "Taj East Gate", stationImgUrl: "" },
@@ -11,7 +13,12 @@ const stations = [
   { stationName: "Mankameshwar", stationImgUrl: "" },
 ];
 
-const PlanYourJourneyCol = () => {
+const PlanYourJourneyCol = ({
+  openPlanYourJourneyForm,
+  setOpenPlanYourJourneyForm,
+}) => {
+  const breakPoint = useMediaQuery("(max-width:428px)");
+
   const [fromStation, setFromStation] = useState("");
   const [showFromStation, setShowFromStation] = useState(false);
   const [fromStationObjRemake, setFromStationObjRemake] = useState<Array<{ stationName: string }>>([]);
@@ -21,11 +28,20 @@ const PlanYourJourneyCol = () => {
 
   const [toStation, setToStation] = useState("");
   const [showToStation, setShowToStation] = useState(false);
+  const [showCollapseFormButton, setShowCollapseFormButton] = useState(false);
 
   useEffect(() => {
     if (stations) setFromStationObjRemake(stations);
     if (stations) setToStationObjRemake(stations);
   }, [stations]);
+
+  // useEffect(() => {
+  //   console.log(window.innerWidth);
+
+  //   // window.innerWidth <= 428
+  //   //   ? setShowCollapseFormButton(true)
+  //   //   : setShowCollapseFormButton(false);
+  // }, []);
 
   const createFromStationsObjForDropdown = (stationName: string) => {
     const filteredStations = stations?.filter((station) =>
@@ -58,27 +74,43 @@ const PlanYourJourneyCol = () => {
     setToStation("");
   };
 
+
   return (
     <>
-      <div className="relative flex flex-col">
+      <div
+        className="relative flex flex-col"
+        onClick={() =>
+          breakPoint && setOpenPlanYourJourneyForm(!openPlanYourJourneyForm)
+        }
+      >
         <div
           onClick={() => {
             setShowFromStation(false);
             setShowToStation(false);
           }}
-          className="before:absolute before:bg-contain before:h-56 before:w-full before:top-24 before:left-0 before:opacity-10 before:bg-no-repeat before:bg-center before:bg-[url('/watermarks/metro4.png')] relative shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg "
-        //   className="before:absolute before:bg-contain before:h-56 before:w-full before:top-24 before:left-4 sm:before:left-14 before:opacity-10 before:bg-no-repeat before:bg-center before:bg-[url('/watermarks/metro4.png')] relative shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg overflow-hidden"
+          className={`before:absolute before:bg-contain before:h-56 before:w-full before:top-24 before:left-0 before:opacity-10 before:bg-no-repeat before:bg-center before:bg-[url('/watermarks/metro4.png')] relative shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg transition-all duration-300 ease-in-out ${
+            openPlanYourJourneyForm ? "h-full" : "h-16 overflow-hidden"
+          } ${breakPoint ? "h-16" : "h-full"}`}
         >
           <div className="flex items-center gap-2">
-            {" "}
             <img
               height="40px"
               width="40px"
               src="/UPMRC.png"
               alt="Metro Agra Logo"
-            />{" "}
+            />
             <span className="text-lg font-medium text-gray-800">
               Plan Your Journey
+            </span>
+            <span
+              className={`${breakPoint ? "block" : "hidden"} ${
+                openPlanYourJourneyForm ? "rotate-90" : ""
+              } transition-all duration-200 ease-in-out`}
+            >
+              <MdPlayArrow
+                size={28}
+                className="text-red-700 group-hover:rotate-90 transition-transform duration-150 ease-in-out"
+              />
             </span>
           </div>
           <div className="text-sm my-4 text-gray-700">
@@ -370,6 +402,24 @@ const PlanYourJourneyCol = () => {
         </div>
       </div>
     </>
+  );
+};
+
+PlanYourJourneyCol.Button = ({ setOpenForm }) => {
+  return (
+    <div
+      className="md:hidden bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg flex items-center gap-2 cursor-pointer group"
+      onClick={() => setOpenForm(true)}
+    >
+      <img height="40px" width="40px" src="/UPMRC.png" alt="Metro Agra Logo" />
+      <span className="text-lg font-medium text-gray-800">
+        Plan Your Journey
+      </span>
+      <MdPlayArrow
+        size={28}
+        className="text-red-700 group-hover:rotate-90 transition-transform duration-150 ease-in-out"
+      />
+    </div>
   );
 };
 
