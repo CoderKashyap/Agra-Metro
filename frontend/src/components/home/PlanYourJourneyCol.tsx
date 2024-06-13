@@ -14,9 +14,7 @@ const stations = [
 const PlanYourJourneyCol = () => {
   const [fromStation, setFromStation] = useState("");
   const [showFromStation, setShowFromStation] = useState(false);
-  const [fromStationObjRemake, setFromStationObjRemake] = useState<
-    Array<{ stationName: string }>
-  >([]);
+  const [fromStationObjRemake, setFromStationObjRemake] = useState<Array<{ stationName: string }>>([]);
   const [toStationObjRemake, setToStationObjRemake] = useState<
     Array<{ stationName: string }>
   >([]);
