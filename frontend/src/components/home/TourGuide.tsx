@@ -46,12 +46,13 @@ export default function TourGuide() {
       description: "Agra’s Must-Visit Architectural Gems"
     },
     {
-      images: [        
+      images: [
         "/tourGuide/downTownCafe.webp",
         "/tourGuide/saltCafe.jpg",
         // "/tourGuide/oberoiAmarvilas.webp",
         "/tourGuide/itcMughal.jpg",
         "/tourGuide/oberoiAmarvilas1.jpg",
+        "/tourGuide/moleculeCafe.webp",
         "/tourGuide/moleculeCafe.webp",
       ],
       heading: "Hotel, Restro & cafes",
@@ -65,6 +66,7 @@ export default function TourGuide() {
         "/tourGuide/sadarBazar1.jpg",
         "/tourGuide/Kinari-Bazaar-1.jpg",
         "/tourGuide/shoppingAgra.jpg",
+        "/tourGuide/shoppingAgra.jpg",
       ],
       heading: "Famous Markets",
       description: "The Pulse of Agra's Streets."
@@ -76,6 +78,7 @@ export default function TourGuide() {
         "/tourGuide/cosmos-mall.jpg",
         "/tourGuide/waterPark.jpg",
         "/tourGuide/cinema.jpg",
+        "/tourGuide/cinema.jpg",
       ],
       heading: "Enjoy & Entertain",
       description: "Malls, Cinema, & Adventure in Agra."
@@ -85,7 +88,7 @@ export default function TourGuide() {
 
 
   useEffect(() => {
-    tourGuideData.forEach((tgData, i)=>{
+    tourGuideData.forEach((tgData, i) => {
       injectKeyframes(tgData?.images, `animate${i}`);
     })
   }, []);

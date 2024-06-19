@@ -28,7 +28,7 @@ const PlanYourJourneyCol = ({
 
   const [toStation, setToStation] = useState("");
   const [showToStation, setShowToStation] = useState(false);
-  const [showCollapseFormButton, setShowCollapseFormButton] = useState(false);
+  // const [showCollapseFormButton, setShowCollapseFormButton] = useState(false);
 
   useEffect(() => {
     if (stations) setFromStationObjRemake(stations);
@@ -88,9 +88,8 @@ const PlanYourJourneyCol = ({
             setShowFromStation(false);
             setShowToStation(false);
           }}
-          className={`before:absolute before:bg-contain before:h-56 before:w-full before:top-24 before:left-0 before:opacity-10 before:bg-no-repeat before:bg-center before:bg-[url('/watermarks/metro4.png')] relative shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg transition-all duration-300 ease-in-out ${
-            openPlanYourJourneyForm ? "h-full" : "h-16 overflow-hidden"
-          } ${breakPoint ? "h-16" : "h-full"}`}
+          className={`before:absolute before:bg-contain before:h-56 before:w-full before:top-24 before:left-0 before:opacity-10 before:bg-no-repeat before:bg-center before:bg-[url('/watermarks/metro4.png')] relative shadow-md bg-[#daf3ff] border border-[#93c7df] p-4 rounded-lg transition-all duration-300 ease-in-out ${openPlanYourJourneyForm ? "h-full" : "h-16 overflow-hidden"
+            } ${breakPoint ? "h-16" : "h-full"}`}
         >
           <div className="flex items-center gap-2">
             <img
@@ -103,9 +102,8 @@ const PlanYourJourneyCol = ({
               Plan Your Journey
             </span>
             <span
-              className={`${breakPoint ? "block" : "hidden"} ${
-                openPlanYourJourneyForm ? "rotate-90" : ""
-              } transition-all duration-200 ease-in-out`}
+              className={`${breakPoint ? "block" : "hidden"} ${openPlanYourJourneyForm ? "rotate-90" : ""
+                } transition-all duration-200 ease-in-out`}
             >
               <MdPlayArrow
                 size={28}
@@ -184,9 +182,8 @@ const PlanYourJourneyCol = ({
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`h-5 w-6 ${
-                        showFromStation && "transform rotate-180"
-                      } absolute right-2 text-gray-600 cursor-pointer`}
+                      className={`h-5 w-6 ${showFromStation && "transform rotate-180"
+                        } absolute right-2 text-gray-600 cursor-pointer`}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -315,9 +312,8 @@ const PlanYourJourneyCol = ({
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`h-5 w-6 ${
-                        showToStation && "transform rotate-180"
-                      } absolute right-2 text-gray-600 cursor-pointer`}
+                      className={`h-5 w-6 ${showToStation && "transform rotate-180"
+                        } absolute right-2 text-gray-600 cursor-pointer`}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
