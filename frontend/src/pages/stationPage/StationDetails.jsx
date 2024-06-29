@@ -8,7 +8,6 @@ import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import LogoutIcon from "@mui/icons-material/Logout";
 import TrainIcon from "@mui/icons-material/Train";
 import NearbyCard from "../../components/stationPage/NearbyCard";
-import { GrLocationPin } from "react-icons/gr";
 import ElevatorIcon from "@mui/icons-material/Elevator";
 import LocationOnSharpIcon from "@mui/icons-material/LocationOnSharp";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
