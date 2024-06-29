@@ -6,7 +6,7 @@ const LiveActiveSponsored = () => {
         <div className="rounded-lg md:p-4 p-2 bg-red-10 border border-pink-200 bg-pink-100 flex flex-col items-center justify-between gap-y-4">
 
             <div className="px-5 py-2 bg-white text-black w-full rounded-lg">
-                <h3 className="font-medium"> <span className="text-red-600">Live</span> Update</h3>
+                <h3 className="font-medium "> <span className="text-red-600">Live</span> Update</h3>
 
                 <div className="flex flex-wrap p-1 gap-x-4 items-center justify-start">
                     <p className="flex gap-1 items-center min-w-fit text-sm">
